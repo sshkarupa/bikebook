@@ -9,7 +9,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'devise'
-
 gem "compass-rails"
 gem 'slim-rails'
 gem 'figaro'

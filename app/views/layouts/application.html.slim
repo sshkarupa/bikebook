@@ -6,4 +6,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
+    #root
+      = render 'shared/header'
+      .inner_content
+        = yield
+      #root_footer
+    = render 'shared/footer'

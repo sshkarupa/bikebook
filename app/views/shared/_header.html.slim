@@ -1,0 +1,6 @@
+#header
+  .inner_content
+    - if user_signed_in?
+      = link_to 'Выйти', destroy_user_session_path, method: :delete
+    - else
+      = link_to 'Вход или регистрация', new_user_session_path
