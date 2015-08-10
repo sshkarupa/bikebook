@@ -1,24 +1,28 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+.basic_form.devise
+  h2 Регистрация на сайте
   = devise_error_messages!
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .form_group
+      = f.label :email
+      = f.email_field :email, autofocus: true
+    .form_group.with_right_desc
+      = f.label :phone
+      = f.text_field :phone
+      .desc
+        | (+ 7 (999) 999-99-99)
+    .form_group.with_right_desc
+      = f.label :password
+      - if @minimum_password_length
+        .desc
+          | (
+          = @minimum_password_length
+          |  символов минимум)
+      = f.password_field :password, autocomplete: "off"
+    .form_group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "off"
+    .form_group.actions
+      = f.submit "Зарегестрироваться", class: 'btn_primary'
+    .form_group
+      = render "devise/shared/links"

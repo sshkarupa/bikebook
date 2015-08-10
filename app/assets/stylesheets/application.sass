@@ -1,11 +1,23 @@
 @import "compass"
 @import "compass/layout/sticky-footer"
 @import "reset"
+@import "lib/*"
 @import "shared/*"
+
+body, a
+  font-family: 'Helvetica', 'sans-serif'
+  font-size: 15px
+a
+  color: #1A5DD6
 
 .inner_content
   max-width: 980px
   margin: 0 auto
-  border: 1px dashed red
+
+.devise
+  max-width: 400px
+  margin: 10% auto
+  background-color: #F1F1F1
+  padding: 20px
 
 +sticky-footer(54px)

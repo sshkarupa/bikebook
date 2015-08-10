@@ -1,0 +1,23 @@
+.btn
+  display: inline-block
+  margin-bottom: 0
+  font-weight: 400
+  text-align: center
+  vertical-align: middle
+  touch-action: manipulation
+  cursor: pointer
+  border: 1px solid transparent
+  padding: 6px 12px
+  font-size: 13px
+  line-height: 1.5385
+  border-radius: 4px
+  +user-select(none)
+
+.btn_primary
+  @extend .btn
+  color: #fff
+  background-color: #7992BF
+  border-color: #6884b7
+  &:hover
+    background-color: #5676af
+    border-color: #496598

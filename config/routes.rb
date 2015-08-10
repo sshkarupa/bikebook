@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'profile', to: 'profile#index'
 
   root 'pages#home'
+
+  get 'ads', to: 'ads#index'
+  resources :ads
+
+  get 'profile', to: 'profile#index'
 
   devise_for :users
 end

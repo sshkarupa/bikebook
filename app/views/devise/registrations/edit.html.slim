@@ -12,6 +12,9 @@ h2
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
   .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
     = f.label :password
     i
       | (leave blank if you don't want to change it)

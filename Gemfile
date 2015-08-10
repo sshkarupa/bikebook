@@ -12,6 +12,7 @@ gem 'devise'
 gem "compass-rails"
 gem 'slim-rails'
 gem 'figaro'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
