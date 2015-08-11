@@ -1,6 +1,6 @@
-class CreateAds < ActiveRecord::Migration
+class CreateAdverts < ActiveRecord::Migration
   def change
-    create_table :ads do |t|
+    create_table :adverts do |t|
       t.references :user
       t.boolean :status
       t.string :title

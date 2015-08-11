@@ -1,0 +1,27 @@
+.advert_wrap
+  .advert_inner
+    .title
+      h3= advert.title
+    .desc
+      span desc:
+      = advert.description
+    div
+      span type:
+      = advert.bike_type
+    div
+      span gears:
+      = advert.gears
+    div
+      span wheels:
+      = advert.wheels
+    div
+      span suspension:
+      = advert.suspension
+    div
+      span sex:
+      = advert.sex
+    div
+      span price:
+      = advert.price
+    = link_to 'Удалить', current_user.adverts.find(advert.id), method: :delete, data: { confirm: "Вы уверены?" }
+    = link_to 'Редактировать', edit_advert_path(current_user.adverts.find(advert.id))

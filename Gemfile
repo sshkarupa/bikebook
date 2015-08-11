@@ -13,6 +13,7 @@ gem "compass-rails"
 gem 'slim-rails'
 gem 'figaro'
 gem 'simple_form'
+gem "simple-navigation"
 
 group :development, :test do
   gem 'byebug'

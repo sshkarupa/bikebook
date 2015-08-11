@@ -6,11 +6,9 @@
     .form_group
       = f.label :email
       = f.email_field :email, autofocus: true
-    .form_group.with_right_desc
+    .form_group
       = f.label :phone
       = f.text_field :phone
-      .desc
-        | (+ 7 (999) 999-99-99)
     .form_group.with_right_desc
       = f.label :password
       - if @minimum_password_length

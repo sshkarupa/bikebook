@@ -18,13 +18,22 @@
     +transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s)
     &:focus
       border-color: #7992BF
-
+  .field_with_errors input
+    border-color: red
+    &:focus
+      border-color: red
+  textarea
+    min-height: 130px
+    resize: vertical
   label
     font-size: 14px
     margin-bottom: 5px
     color: #000000
     font-weight: bold
     display: block
+
+  .jq-selectbox
+    width: 100%
 
   .form_group
     margin-bottom: 15px
@@ -34,7 +43,7 @@
     &.actions
       text-align: center
     &.checkbox label
-      +inline-block(bottom)
+      +inline-block(middle)
       margin: 0 0 0 10px
 
     .desc
@@ -43,6 +52,7 @@
       top: 2px
       right: 0
       color: #848484
+
   h2
     text-align: center
     margin-bottom: 25px

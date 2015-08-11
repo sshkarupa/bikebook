@@ -81,6 +81,16 @@ ru:
 
     # Перевод названий атрибутов моделей. Используется в Model.human_attribute_name(attribute).
     attributes:
+      advert:
+        description: "Описание"
+        gears: "Количество скоростей"
+        price: "Цена"
+        sex: "Пол"
+        suspension: "Подвеска"
+        title: "Заголовок объявления"
+        bike_type: "Тип велосипеда"
+        wheels: "Размер колес"
+
       user:
         phone: "Телефон"
         email: "Электронная почта"
@@ -88,3 +98,4 @@ ru:
         name: "Имя"
         password: "Пароль"
         password_confirmation: "Повторите пароль"
+        current_password: "Текущий пароль"

@@ -166,6 +166,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    simple-navigation (4.0.3)
+      activesupport (>= 2.3.2)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -231,6 +233,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails_layout
   sass-rails (~> 5.0)
+  simple-navigation
   simple_form
   slim-rails
   spring

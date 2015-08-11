@@ -2,7 +2,10 @@
 @import "compass/layout/sticky-footer"
 @import "reset"
 @import "lib/*"
+@import "vendor/*"
 @import "shared/*"
+@import "adverts/*"
+
 
 body, a
   font-family: 'Helvetica', 'sans-serif'
@@ -16,8 +19,13 @@ a
 
 .devise
   max-width: 400px
-  margin: 10% auto
+  margin: 20px auto
   background-color: #F1F1F1
   padding: 20px
+
+// AdBlock fix
+.ad_title
+  display: block !important
+  visibility: visible !important
 
 +sticky-footer(54px)

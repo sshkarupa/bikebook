@@ -1,10 +1,6 @@
 #header
   .inner_content
     - if user_signed_in?
-      = link_to 'Подать объявление', new_ad_path
-      = link_to 'Мой профиль', edit_user_registration_path
-      = link_to 'Мои объявления', ads_path
-
-      = link_to 'Выйти', destroy_user_session_path, method: :delete
+      = render_navigation :context => :profile, :expand_all => false, renderer: :links
     - else
       = link_to 'Вход или регистрация', new_user_session_path
