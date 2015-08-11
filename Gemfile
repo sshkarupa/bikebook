@@ -14,6 +14,7 @@ gem 'slim-rails'
 gem 'figaro'
 gem 'simple_form'
 gem "simple-navigation"
+gem "paperclip", "~> 4.3"
 
 group :development, :test do
   gem 'byebug'

@@ -1,6 +1,9 @@
-class Advert < ActiveRecord::Base
+class Bike < ActiveRecord::Base
   belongs_to :user
   validates :bike_type, :title, :price, presence: true
+
+  has_attached_file :picture, :styles => { :medium => "300x300>", :thumb => "100x100>" }#, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   class << self
     def bikes_type
@@ -42,5 +45,4 @@ class Advert < ActiveRecord::Base
       ]
     end
   end
-
 end

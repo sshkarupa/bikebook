@@ -63,8 +63,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #   # Add an item to the sub navigation (same params again)
     #   sub_nav.item :key_2_1, 'name', url, options
     # end
-    primary.item :new_advert, 'Подать объявление', new_advert_path
-    primary.item :my_ads, 'Мои объявления', adverts_path
+    primary.item :new_bike, 'Подать объявление', new_bike_path
+    primary.item :my_bikes, 'Мои объявления', bikes_path
     primary.item :edit_user_registration, 'Мой профиль', edit_user_registration_path
     primary.item :destroy_user_session, 'Выйти', destroy_user_session_path, class: 'danger', method: :delete
 

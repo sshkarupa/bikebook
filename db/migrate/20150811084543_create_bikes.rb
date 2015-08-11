@@ -1,11 +1,11 @@
-class CreateAdverts < ActiveRecord::Migration
+class CreateBikes < ActiveRecord::Migration
   def change
-    create_table :adverts do |t|
+    create_table :bikes do |t|
       t.references :user
       t.boolean :status
       t.string :title
       t.text :description
-      t.string :type
+      t.string :bike_type
       t.integer :wheels
       t.integer :gears
       t.string :suspension

@@ -1,0 +1,21 @@
+= simple_form_for @bike do |f|
+  .form_group
+    = f.input :title
+  .form_group
+    = f.input :description, as: :text
+  .form_group
+    = f.input :bike_type, collection: Bike.bikes_type
+  .form_group
+    = f.input :gears, collection: Bike.gears
+  .form_group
+    = f.input :wheels, collection: Bike.wheels
+  .form_group
+    = f.input :suspension, collection: Bike.suspension
+  .form_group
+    = f.input :sex, collection: Bike.sex
+  .form_group
+    = f.input :price, as: :string, maxlength: 9
+  .form_group
+    = f.input :picture, as: :file
+  .form_group.actions
+    = f.submit 'Сохранить', class: 'btn_primary'

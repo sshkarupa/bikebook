@@ -1,0 +1,28 @@
+.advert_wrap
+  = image_tag bike.picture.url(:medium)
+  .bike_inner
+    .title
+      h3= bike.title
+    .desc
+      span desc:
+      = bike.description
+    div
+      span type:
+      = bike.bike_type
+    div
+      span gears:
+      = bike.gears
+    div
+      span wheels:
+      = bike.wheels
+    div
+      span suspension:
+      = bike.suspension
+    div
+      span sex:
+      = bike.sex
+    div
+      span price:
+      = bike.price
+    = link_to 'Удалить', current_user.bikes.find(bike.id), method: :delete, data: { confirm: "Вы уверены?" }
+    = link_to 'Редактировать', edit_bike_path(current_user.bikes.find(bike.id))
