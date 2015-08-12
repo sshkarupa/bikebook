@@ -1,1 +1,4 @@
-= render @bikes
+- if @bikes.any?
+  = render @bikes
+- else
+  h2 Нет обявлений

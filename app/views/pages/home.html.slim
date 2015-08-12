@@ -1,3 +1,7 @@
-h1 Продажа и покупка б/у велосипедов
+.home_header
+  h1 Продажа и покупка б/у велосипедов
 
-=@bikes
+.bikes
+  - @bikes.each do |bike|
+    .bike style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url : false})"
+      .price Цена: #{bike.price} руб.

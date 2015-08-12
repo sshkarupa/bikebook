@@ -1,4 +1,3 @@
-=
 = simple_nested_form_for @bike, html: {multipart: true} do |f|
   .form_group
     = f.input :title
@@ -21,9 +20,8 @@
       = f.simple_fields_for :pictures do |i|
         = image_tag i.object.img.url(:thumb)
         = i.input :img, as: :file
-
-        = i.link_to_remove "Remove this img"
-      = f.link_to_add "Добавить ещё изображение", :pictures
+        = i.link_to_remove "x"
+      = f.link_to_add "Добавить изображение", :pictures
   - else
     .form_group
       = f.simple_fields_for :pictures do |i|

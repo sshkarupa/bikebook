@@ -9,7 +9,10 @@ html
     #root
       = render 'shared/flash'
       = render 'shared/header'
-      .inner_content
+      - if params[:controller] == 'pages' &&  params[:action] == 'home'
         = yield
+      - else
+        .inner_content
+          = yield
       #root_footer
     = render 'shared/footer'

@@ -3,4 +3,5 @@
     - if user_signed_in?
       = render_navigation :context => :profile, :expand_all => false, renderer: :links
     - else
-      = link_to 'Вход или регистрация', new_user_session_path
+      = render_navigation :expand_all => false, renderer: :links
+

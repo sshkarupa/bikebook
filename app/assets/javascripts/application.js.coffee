@@ -4,6 +4,7 @@
 #= require vendor/jquery.mask
 #= require vendor/nprogress
 #= require vendor/jquery.formstyler
+#= require vendor/minigrid
 #= require jquery_nested_form
 #= require_tree .
 init = ->
@@ -28,6 +29,11 @@ init = ->
   $(document).on 'page:restore', ->
     NProgress.remove()
     return
+
+  minigrid '.bikes', '.bike'
+
+  window.addEventListener 'resize', ->
+    minigrid '.bikes', '.bike'
 
 $(document).on('page:change', init)
 
