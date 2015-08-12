@@ -1,8 +1,10 @@
 .bike_box
   margin: 20px 0
   clear: both
-  border-bottom: 2px solid #0088CC
-  padding-bottom: 20px
+  padding: 20px
+  +box-shadow(0 0px 10px 0 rgba(0,0,0,.1))
+  padding: 20px
+  background-color: white
   .header
     overflow: hidden
 .bike_config
@@ -11,11 +13,6 @@
   width: 300px
   float: left
   margin-right: 20px
-  .thumb
-    width: 50px
-    height: 50px
-    background-color: #02bb6f
-    +inline-block(middle)
 .bike_description
   clear: both
   margin-top: 20px

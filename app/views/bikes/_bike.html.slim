@@ -1,14 +1,9 @@
 .bike_box
   .header
     .bike_image
+      = image_tag bike.pictures.first.img.url(:medium)
       - bike.pictures.each do |picture|
-        = image_tag picture.img.url(:medium)
-      .thumbs
-        .thumb
-        .thumb
-        .thumb
-        .thumb
-        .thumb
+        = picture.img.url
     .bike_config
       .bike_title = bike.title
       .bike_group
@@ -33,6 +28,7 @@
   .bike_description
     h4 Описание
     = bike.description.html_safe
-  .bike_services
-    = link_to 'Удалить', current_user.bikes.find(bike.id), method: :delete, data: { confirm: "Вы уверены?" }
-    = link_to 'Редактировать', edit_bike_path(current_user.bikes.find(bike.id))
+  - if user_signed_in?
+    .bike_services
+      = link_to 'Удалить', current_user.bikes.find(bike.id), method: :delete, data: { confirm: "Вы уверены?" }
+      = link_to 'Редактировать', edit_bike_path(current_user.bikes.find(bike.id))

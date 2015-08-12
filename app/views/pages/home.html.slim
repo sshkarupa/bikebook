@@ -3,5 +3,5 @@
 
 .bikes
   - @bikes.each do |bike|
-    .bike style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url : false})"
-      .price Цена: #{bike.price} руб.
+    a.bike href="#{bike_path(bike.id)}" style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url : false})"
+      .price #{bike.price} руб.

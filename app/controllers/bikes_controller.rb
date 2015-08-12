@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
 
   def index
     @bikes = current_user.bikes
@@ -9,6 +9,10 @@ class BikesController < ApplicationController
   def new
     @bike = Bike.new
     1.times { @bike.pictures.build }
+  end
+
+  def show
+    @bike = Bike.find(params[:id])
   end
 
   def create
@@ -26,7 +30,7 @@ class BikesController < ApplicationController
     if @bike.update_attributes(bike_params)
       redirect_to bikes_path
     else
-      render 'edit'
+      render :edit
     end
   end
 
