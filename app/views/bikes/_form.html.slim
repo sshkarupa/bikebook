@@ -1,4 +1,5 @@
-= simple_form_for @bike do |f|
+=
+= simple_nested_form_for @bike, html: {multipart: true} do |f|
   .form_group
     = f.input :title
   .form_group
@@ -15,7 +16,18 @@
     = f.input :sex, collection: Bike.sex
   .form_group
     = f.input :price, as: :string, maxlength: 9
-  .form_group
-    = f.input :picture, as: :file
+  - if params[:action] == 'edit'
+    .form_group
+      = f.simple_fields_for :pictures do |i|
+        = image_tag i.object.img.url(:thumb)
+        = i.input :img, as: :file
+
+        = i.link_to_remove "Remove this img"
+      = f.link_to_add "Добавить ещё изображение", :pictures
+  - else
+    .form_group
+      = f.simple_fields_for :pictures do |i|
+        = i.input :img, as: :file
+      = f.link_to_add "Добавить ещё изображение", :pictures
   .form_group.actions
     = f.submit 'Сохранить', class: 'btn_primary'

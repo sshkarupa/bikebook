@@ -1,28 +1,38 @@
-.advert_wrap
-  = image_tag bike.picture.url(:medium)
-  .bike_inner
-    .title
-      h3= bike.title
-    .desc
-      span desc:
-      = bike.description
-    div
-      span type:
-      = bike.bike_type
-    div
-      span gears:
-      = bike.gears
-    div
-      span wheels:
-      = bike.wheels
-    div
-      span suspension:
-      = bike.suspension
-    div
-      span sex:
-      = bike.sex
-    div
-      span price:
-      = bike.price
+.bike_box
+  .header
+    .bike_image
+      - bike.pictures.each do |picture|
+        = image_tag picture.img.url(:medium)
+      .thumbs
+        .thumb
+        .thumb
+        .thumb
+        .thumb
+        .thumb
+    .bike_config
+      .bike_title = bike.title
+      .bike_group
+        span Тип велосипеда:
+        = bike.bike_type
+      .bike_group
+        span Количество скоростей:
+        = bike.gears
+      .bike_group
+        span Размер колес:
+        = bike.wheels
+      .bike_group
+        span Подвеска:
+        = bike.suspension
+      .bike_group
+        span Пол:
+        = bike.sex
+      .bike_group
+        span Цена:
+        = bike.price
+        |  руб.
+  .bike_description
+    h4 Описание
+    = bike.description.html_safe
+  .bike_services
     = link_to 'Удалить', current_user.bikes.find(bike.id), method: :delete, data: { confirm: "Вы уверены?" }
     = link_to 'Редактировать', edit_bike_path(current_user.bikes.find(bike.id))

@@ -81,6 +81,8 @@ ru:
 
     # Перевод названий атрибутов моделей. Используется в Model.human_attribute_name(attribute).
     attributes:
+      picture:
+        img: "Фото"
       bike:
         description: "Описание"
         gears: "Количество скоростей"
@@ -90,7 +92,7 @@ ru:
         title: "Заголовок объявления"
         bike_type: "Тип велосипеда"
         wheels: "Размер колес"
-        picture: "Фото"
+
 
       user:
         phone: "Телефон"

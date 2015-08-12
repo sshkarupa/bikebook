@@ -4,6 +4,7 @@
 #= require vendor/jquery.mask
 #= require vendor/nprogress
 #= require vendor/jquery.formstyler
+#= require jquery_nested_form
 #= require_tree .
 init = ->
   setTimeout(->
@@ -11,6 +12,9 @@ init = ->
   ,4000)
 
   $('input, select').styler()
+  $(document).on 'nested:fieldAdded', ->
+    $('input, select').styler() # 'couse can't fired trigger('refresh')
+
 
   $('#user_phone').mask '+0 (000) 000-00-00',
     placeholder: "+7 (000) 000-00-00"

@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :bikes
+  has_many :bikes, dependent: :destroy
   validates :phone, presence: true
 end
