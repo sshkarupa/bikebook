@@ -1,5 +1,8 @@
-.home_header
-  h1 Продажа и покупка б/у велосипедов
+/.home_header
+/  h1 Продажа и покупка б/у велосипедов
+/  .home_special
+/    = link_to 'Продать велосипед', new_bike_path, class: 'sell_bike_btn'
+
 
 .bikes
   - @bikes.each do |bike|
