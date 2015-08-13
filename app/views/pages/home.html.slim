@@ -6,4 +6,4 @@
 .bikes
   - @bikes.each do |bike|
     a.home_bike href="#{bike_path(bike)}" style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url(:medium) : false})"
-      .price #{number_with_delimiter(bike.price, delimiter: " ")} руб.
+      .price.price_hl = human_price bike.price

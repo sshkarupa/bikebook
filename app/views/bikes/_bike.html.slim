@@ -1,31 +1,14 @@
 .bike.wrap_box
-  .header
-    .bike_image
-      = image_tag bike.pictures.first.img.url(:medium_l)
-    /- bike.pictures.each do |picture|
-    /  = picture.img.url
-    .bike_config
-      .bike_title
-        h1 = bike.title
+  .image
+    = image_tag bike.pictures.first.img.url(:medium_l)
+  /- bike.pictures.each do |picture|
+  /  = picture.img.url
+  .title
+    h1 = bike.title
+  .config
+    = render'shared/bike_config', bike: bike
+  - if bike.description.present?
+    .description
       .bike_group
-        span Тип велосипеда:
-        = bike.bike_type
-      .bike_group
-        span Количество скоростей:
-        = bike.gears
-      .bike_group
-        span Размер колес:
-        = bike.wheels
-      .bike_group
-        span Подвеска:
-        = bike.suspension
-      .bike_group
-        span Пол:
-        = bike.sex
-      .bike_group
-        span Цена:
-        = bike.price
-        |  руб.
-  .bike_description
-    h4 Описание
-    = bike.description.html_safe
+        div Описание:
+        = bike.description.html_safe
