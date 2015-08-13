@@ -1,14 +1,21 @@
 .bike.wrap_box
   .image
-    = image_tag bike.pictures.first.img.url(:medium_l)
-  /- bike.pictures.each do |picture|
-  /  = picture.img.url
+    ul.bike_slider
+      - bike.pictures.each do |picture|
+        li = image_tag picture.img.url(:medium_l)
   .title
     h1 = bike.title
+
+  .owner
+    .bike_group
+      span Телефон:
+      = @user.phone
+    .bike_group
+      span Почта:
+      = @user.email
   .config
     = render'shared/bike_config', bike: bike
   - if bike.description.present?
-    .description
-      .bike_group
-        div Описание:
-        = bike.description.html_safe
+    .description.bike_group
+      div Описание:
+      = bike.description.html_safe

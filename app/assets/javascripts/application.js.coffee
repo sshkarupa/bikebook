@@ -7,7 +7,12 @@
 #= require vendor/minigrid
 #= require jquery_nested_form
 #= require_tree .
+
 init = ->
+
+  $('.bike_slider').bxSlider
+    pager: $('.bike_slider li').length > 1 ? true : false
+
   setTimeout(->
     $('.flash').fadeOut()
   ,4000)

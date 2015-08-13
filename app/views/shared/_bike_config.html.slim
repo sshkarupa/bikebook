@@ -1,18 +1,27 @@
 .bike_group
   span Тип велосипеда:
   = bike.bike_type
-.bike_group
-  span Количество скоростей:
-  = bike.gears
-.bike_group
-  span Размер колес:
-  = bike.wheels
-.bike_group
-  span Подвеска:
-  = bike.suspension
-.bike_group
-  span Пол:
-  = bike.sex
+
+- if bike.gears.present?
+  .bike_group
+    span Количество скоростей:
+    = bike.gears
+
+- if bike.wheels.present?
+  .bike_group
+    span Размер колес:
+    = bike.wheels
+
+- if bike.suspension.present?
+  .bike_group
+    span Подвеска:
+    = bike.suspension
+
+- if bike.sex.present?
+  .bike_group
+    span Пол:
+    = bike.sex
+
 .bike_group
   span Цена:
   span.price_hl = human_price bike.price
