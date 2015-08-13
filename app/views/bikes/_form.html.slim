@@ -26,6 +26,6 @@
     .form_group
       = f.simple_fields_for :pictures do |i|
         = i.input :img, as: :file
-      = f.link_to_add "Добавить ещё изображение", :pictures
+      = f.link_to_add "Добавить изображение", :pictures
   .form_group.actions
     = f.submit 'Сохранить', class: 'btn_primary'

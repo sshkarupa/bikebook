@@ -1,0 +1,21 @@
+.nav_footer
+  text-align: right
+.nav a
+  +inline-block(middle)
+  height: 40px
+  line-height: 38px
+  padding: 0 10px
+  color: white
+  text-decoration: none
+  +user-select(none)
+  &:hover
+    background-color: white
+    color: black
+  &#destroy_user_session:hover
+    background-color: #e25d5d
+    color: white
+  &.selected
+    background-color: white
+    color: black
+    &:hover
+      background-color: white

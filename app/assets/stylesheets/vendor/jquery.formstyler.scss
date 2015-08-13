@@ -5,8 +5,6 @@
 	height: 16px;
 	margin: 0 4px 0 0;
 	border: 1px solid #C3C3C3;
-	border-radius: 3px;
-	background: #F5F5F5;
 	cursor: pointer;
 }
 .jq-checkbox.checked .jq-checkbox__div {
@@ -54,8 +52,6 @@
 
 .jq-file {
 	width: 270px;
-	border-radius: 4px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
 .jq-file input {
 	height: auto;
@@ -69,10 +65,7 @@
 	height: 34px;
 	padding: 0 80px 0 10px;
 	border: 1px solid #CCC;
-	border-bottom-color: #B3B3B3;
-	border-radius: 4px;
 	background: #FFF;
-	box-shadow: inset 1px 1px #F1F1F1;
 	font: 14px/32px Arial, sans-serif;
 	color: #333;
 	white-space: nowrap;
@@ -84,7 +77,6 @@
 	right: 1px;
 	padding: 0 10px;
 	border-left: 1px solid #CCC;
-	border-radius: 0 4px 4px 0;
 	background: #F5F5F5;
 	font: 14px/32px Arial, sans-serif;
 	color: #333;
@@ -221,9 +213,6 @@
 	height: 32px;
 	padding: 0 45px 0 10px;
 	border: 1px solid #CCC;
-	border-bottom-color: #B3B3B3;
-	border-radius: 4px;
-	background: #F5F5F5;
 	font: 14px/32px Arial, sans-serif;
 	color: #333;
 	text-shadow: 1px 1px #FFF;

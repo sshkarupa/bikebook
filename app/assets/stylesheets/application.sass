@@ -7,6 +7,8 @@
 @import "bikes/*"
 @import "pages/*"
 
+html
+  overflow-y: scroll
 
 body, a
   font-family: 'Helvetica', 'sans-serif'
@@ -30,7 +32,7 @@ a
   margin: 20px auto
   padding: 20px
   background-color: white
-  +box-shadow(0 0px 10px 0 rgba(0, 0, 0, 0.1))
+  +box-shadow(0 0px 5px 0 rgba(0, 0, 0, 0.1))
 
 
 +sticky-footer(40px)

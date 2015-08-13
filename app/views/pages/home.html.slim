@@ -1,10 +1,9 @@
-/.home_header
-/  h1 Продажа и покупка б/у велосипедов
-/  .home_special
-/    = link_to 'Продать велосипед', new_bike_path, class: 'sell_bike_btn'
-
-
+/= render 'filter'
+.inner_content
+  .bikes_header
+    h1 Покупка и продажа б/у велосипедов
+    = link_to 'Продать велосипед', new_bike_path, class: 'sell_bike_btn'
 .bikes
   - @bikes.each do |bike|
-    a.bike href="#{bike_path(bike.id)}" style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url : false})"
+    a.bike href="#{bike_path(bike)}" style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url(:medium) : false})"
       .price #{bike.price} руб.

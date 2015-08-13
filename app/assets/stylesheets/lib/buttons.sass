@@ -7,21 +7,22 @@
   touch-action: manipulation
   cursor: pointer
   border: 1px solid transparent
-  padding: 6px 12px
+  padding: 9px 20px
   font-size: 13px
   line-height: 1.5385
-  border-radius: 4px
   +user-select(none)
   background-color: #CCCCCC
+  text-decoration: none
 
 .btn_primary
   @extend .btn
   color: #fff
-  background-color: #7992BF
-  border-color: #6884b7
+  background-color: #5676af
+  border-color: #496598
   &:hover
-    background-color: #5676af
-    border-color: #496598
+    background-color: #7992BF
+    border-color: #6884b7
+
 
 .btn_danger
   @extend .btn
@@ -34,3 +35,8 @@
 
 .sell_bike_btn
   @extend .btn
+  background-color: #14A556
+  color: white
+  font-weight: bold
+  &:hover
+    background-color: #14ca70
