@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user.bikes.any?
-      bikes_path
+      profile_bikes_path
     else
-      new_bike_path
+      new_profile_bike_path
     end
   end
 

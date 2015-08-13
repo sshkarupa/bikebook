@@ -6,6 +6,7 @@
 @import "shared/*"
 @import "bikes/*"
 @import "pages/*"
+@import "profile/*"
 
 html
   overflow-y: scroll
@@ -27,12 +28,14 @@ a
   text-align: center
   margin-top: 20px
 
-.devise
-  max-width: 400px
-  margin: 20px auto
+.wrap_box
   padding: 20px
   background-color: white
   +box-shadow(0 0px 5px 0 rgba(0, 0, 0, 0.1))
+
+.devise
+  max-width: 400px
+  margin: 20px auto
 
 
 +sticky-footer(40px)

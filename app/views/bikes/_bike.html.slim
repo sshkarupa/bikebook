@@ -1,11 +1,12 @@
-.bike_box
+.bike.wrap_box
   .header
     .bike_image
       = image_tag bike.pictures.first.img.url(:medium_l)
-      /- bike.pictures.each do |picture|
-      /  = picture.img.url
+    /- bike.pictures.each do |picture|
+    /  = picture.img.url
     .bike_config
-      .bike_title = bike.title
+      .bike_title
+        h1 = bike.title
       .bike_group
         span Тип велосипеда:
         = bike.bike_type
@@ -28,6 +29,3 @@
   .bike_description
     h4 Описание
     = bike.description.html_safe
-  /.bike_services
-  /  = link_to 'Удалить', current_user.bikes.find(bike.id), method: :delete, data: { confirm: "Вы уверены?" }
-  /  = link_to 'Редактировать', edit_bike_path(current_user.bikes.find(bike.id))

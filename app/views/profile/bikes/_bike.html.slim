@@ -1,0 +1,31 @@
+.profile_bike.wrap_box
+  .image
+    = image_tag bike.pictures.first.img.url(:medium_s)
+  .config
+    .bike_title
+      h3 = bike.title
+    .bike_group
+      span Тип велосипеда:
+      = bike.bike_type
+    .bike_group
+      span Количество скоростей:
+      = bike.gears
+    .bike_group
+      span Размер колес:
+      = bike.wheels
+    .bike_group
+      span Подвеска:
+      = bike.suspension
+    .bike_group
+      span Пол:
+      = bike.sex
+    .bike_group
+      span Цена:
+      = bike.price
+      |  руб.
+  .description
+    h4 Описание
+    = bike.description.html_safe
+  .services
+    div= link_to 'Редактировать', edit_profile_bike_path(current_user.bikes.find(bike)), class: 'btn_primary'
+    div= link_to 'Удалить', current_user.bikes.find(bike), method: :delete, data: { confirm: "Вы уверены?" }, class: 'btn_danger'

@@ -65,8 +65,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #   sub_nav.item :key_2_1, 'name', url, options
     # end
     primary.item :home, 'На главную', root_path, class: 'go_home'
-    primary.item :new_bike, 'Подать объявление', new_bike_path
-    primary.item :my_bikes, 'Мои объявления', bikes_path
+    primary.item :new_bike, 'Подать объявление', new_profile_bike_path
+    primary.item :my_bikes, 'Мои объявления', profile_bikes_path
     primary.item :edit_user_registration, 'Мой профиль', edit_user_registration_path
     primary.item :destroy_user_session, 'Выйти', destroy_user_session_path, class: 'danger', method: :delete
 

@@ -1,4 +1,4 @@
-= simple_nested_form_for @bike, html: {multipart: true} do |f|
+= simple_nested_form_for [:profile, @bike], html: {multipart: true} do |f|
   .form_group
     = f.input :title
   .form_group
