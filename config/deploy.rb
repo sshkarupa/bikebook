@@ -1,6 +1,7 @@
 set :scm, :git
 set :repo_url, 'git@github.com:hrumhrumble/bikebook.git'
 
+set :user, "deploy"
 set :use_sudo, false
 set :rvm_type, :user
 set :keep_releases, 5
