@@ -10,6 +10,14 @@
 
 init = ->
 
+  if $('.edit_fields .fields').length <= 1
+    $('.edit_fields').find('.btn_danger').hide()
+
+  $('.edit_fields .fields .btn_danger').on 'click', ->
+    if $('.edit_fields .fields:visible').length <= 2
+      $('.edit_fields').find('.btn_danger').hide()
+
+
   $('.bike_slider').bxSlider
     pager: $('.bike_slider li').length > 1 ? true : false
 

@@ -16,10 +16,11 @@
     border: 1px solid #ccc
     &:focus
       border-color: #7992BF
-  .field_with_errors input
-    border-color: red
-    &:focus
+  .field_with_errors
+    input, .jq-selectbox__select, .jq-file__name
       border-color: red
+      &:focus
+        border-color: red
   textarea
     min-height: 250px
     resize: vertical
@@ -46,6 +47,34 @@
     &.checkbox label
       +inline-block(baseline)
       margin: 0 0 0 5px
+    &.edit_fields
+      .fields
+        display: inline-block
+        position: relative
+        margin: 0 15px 0 0
+        .input
+          display: none
+        .btn_danger
+          position: absolute
+          bottom: 0
+          right: 0
+          height: 32px
+          margin: 0
+          padding: 0 5px
+          line-height: 37px
+
+    .fields
+      margin-bottom: 15px
+      +clearfix
+      .input
+        display: inline-block
+      .btn_danger
+        +inline-block(bottom)
+        height: 32px
+        margin-bottom: 4px
+        margin-left: 15px
+        padding: 0 5px
+        line-height: 37px
 
     .desc
       font-size: 12px

@@ -17,6 +17,7 @@ class Profile::BikesController < ApplicationController
 
   def create
     @bike = current_user.bikes.build(bike_params)
+    1.times { @bike.pictures.build }
     if @bike.save
       redirect_to profile_bikes_path
       flash[:notice] = "success create"
@@ -27,6 +28,7 @@ class Profile::BikesController < ApplicationController
 
   def update
     @bike = current_user.bikes.find(params[:id])
+
     if @bike.update_attributes(bike_params)
       redirect_to profile_bikes_path
     else

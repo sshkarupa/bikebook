@@ -1,3 +1,4 @@
+= params.inspect
 = simple_nested_form_for [:profile, @bike], html: {multipart: true} do |f|
   .form_group
     = f.input :title
@@ -15,12 +16,13 @@
     = f.input :sex, collection: Bike.sex
   .form_group
     = f.input :price, as: :string, maxlength: 9
-  - if params[:action] == 'edit'
-    .form_group
+  - if params[:action] == 'edit' || params[:action] == 'update'
+    .form_group.edit_fields
       = f.simple_fields_for :pictures do |i|
-        = image_tag i.object.img.url(:thumb)
+        = image_tag i.object.img.url(:medium_s)
         = i.input :img, as: :file
-        = i.link_to_remove "x"
+        = i.link_to_remove "", class: 'btn_danger icon-trash-empty'
+    .form_group
       = f.link_to_add "Добавить изображение", :pictures
   - else
     .form_group
