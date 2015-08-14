@@ -1,5 +1,6 @@
-server '46.36.218.3', user: 'deploy', roles: %w{web app db}
+set :stage, :staging
 
+server '46.36.218.3', user: 'deploy', roles: %w{web app db}
 set :rails_env, 'staging'
 set :unicorn_env, 'staging'
 set :unicorn_rack_env, 'staging'
@@ -7,6 +8,7 @@ set :application, 'bikebook'
 set :user, "deploy"
 set :deploy_to, "/home/#{fetch :user}/www/#{fetch :application}_staging"
 set :rvm_ruby_version, "ruby-2.2.2@#{fetch :application}"
+
 
 # server-based syntax
 # ======================

@@ -40,5 +40,5 @@ group :development, :test do
   gem 'pry-rescue'
 end
 group :production do
-  gem 'unicorn'
 end
+gem 'unicorn'
