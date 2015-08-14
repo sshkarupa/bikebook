@@ -5,7 +5,7 @@ set :unicorn_env, 'staging'
 set :unicorn_rack_env, 'staging'
 set :application, 'bikebook'
 set :user, "deploy"
-set :deploy_to, "/home/#{fetch :user}/www/#{fetch :application}"
+set :deploy_to, "/home/#{fetch :user}/www/#{fetch :application}_staging"
 set :rvm_ruby_version, "ruby-2.2.2@#{fetch :application}"
 
 # server-based syntax
