@@ -20,6 +20,8 @@ init = ->
 
   $('.bike_slider').bxSlider
     pager: $('.bike_slider li').length > 1 ? true : false
+    onSliderLoad: ->
+      $('.bx-wrapper').css('visibility', 'visible')
 
   setTimeout(->
     $('.flash').fadeOut()
