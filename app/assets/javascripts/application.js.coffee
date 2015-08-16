@@ -17,11 +17,12 @@ init = ->
     if $('.edit_fields .fields:visible').length <= 2
       $('.edit_fields').find('.btn_danger').hide()
 
+
   $(".bike_slider").owlCarousel
     items: 1
     nav: true
     navText: ["",""]
-    loop: true
+    loop: false
 
   setTimeout(->
     $('.flash').fadeOut()
