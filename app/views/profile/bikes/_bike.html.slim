@@ -11,5 +11,5 @@
         div Описание:
         = truncate bike.description, length: 200
   .services
-    = link_to 'Редактировать', edit_profile_bike_path(current_user.bikes.find(bike)), class: 'btn_primary'
-    = link_to 'Удалить', current_user.bikes.find(bike), method: :delete, data: { confirm: "Вы уверены?" }, class: 'btn_danger'
+    = link_to 'Редактировать', edit_profile_bike_path(bike), class: 'btn_primary'
+    = link_to 'Удалить', profile_bike_path(bike), method: :delete, data: { confirm: "Вы уверены?" }, class: 'btn_danger'
