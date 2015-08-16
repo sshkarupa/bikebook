@@ -20,8 +20,8 @@ init = ->
   $(".bike_slider").owlCarousel
     items: 1
     nav: true
-    autoHeight: true
     navText: ["",""]
+    loop: true
 
   setTimeout(->
     $('.flash').fadeOut()
