@@ -17,11 +17,11 @@ init = ->
     if $('.edit_fields .fields:visible').length <= 2
       $('.edit_fields').find('.btn_danger').hide()
 
-
-  $('.bike_slider').bxSlider
-    pager: $('.bike_slider li').length > 1 ? true : false
-    onSliderLoad: ->
-      $('.bx-wrapper').css('visibility', 'visible')
+  $(".bike_slider").owlCarousel
+    items: 1
+    nav: true
+    autoHeight: true
+    navText: ["",""]
 
   setTimeout(->
     $('.flash').fadeOut()
@@ -45,10 +45,10 @@ init = ->
     NProgress.remove()
     return
 
-  minigrid '.bikes', '.home_bike', 13
+  minigrid '.bikes', '.home_bike', 10
 
   window.addEventListener 'resize', ->
-    minigrid '.bikes', '.home_bike', 13
+    minigrid '.bikes', '.home_bike', 10
 
 $(document).on('page:change', init)
 

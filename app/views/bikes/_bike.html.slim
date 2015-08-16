@@ -1,8 +1,8 @@
 .bike.wrap_box
   .image
-    ul.bike_slider
+    .bike_slider
       - bike.pictures.each do |picture|
-        li = image_tag picture.img.url(:medium_l)
+        = image_tag picture.img.url(:medium_l)
   .title
     h1 = bike.title
 
