@@ -18,4 +18,4 @@
   - if bike.description.present?
     .description.bike_group
       div Описание:
-      = bike.description.html_safe
+      = bike.description.gsub(/\n/, '<br/>').html_safe
