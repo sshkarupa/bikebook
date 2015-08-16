@@ -8,6 +8,8 @@
   color: white
   text-decoration: none
   +user-select(none)
+  &#home
+    float: left
   &:hover
     background-color: white
     color: black
@@ -19,3 +21,7 @@
     color: black
     &:hover
       background-color: white
+  +mobile
+    display: block
+    &#home
+      float: none

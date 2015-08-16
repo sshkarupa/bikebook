@@ -45,10 +45,10 @@ init = ->
     NProgress.remove()
     return
 
-  minigrid '.bikes', '.home_bike', 15
+  minigrid '.bikes', '.home_bike', $(window).width() < 980 ? 5 : 15
 
   window.addEventListener 'resize', ->
-    minigrid '.bikes', '.home_bike', 15
+    minigrid '.bikes', '.home_bike', $(window).width() < 980 ? 5 : 15
 
 $(document).on('page:change', init)
 
