@@ -17,6 +17,15 @@ init = ->
     if $('.edit_fields .fields:visible').length <= 2
       $('.edit_fields').find('.btn_danger').hide()
 
+  $('.bike_slider').magnificPopup
+    delegate: 'a'
+    type: 'image'
+    tLoading: 'Loading image #%curr%...'
+    mainClass: 'mfp-img-mobile'
+    gallery:
+      enabled: true
+      navigateByImgClick: true
+      preload: [0, 1]
 
   $(".bike_slider").owlCarousel
     items: 1

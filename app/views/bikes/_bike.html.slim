@@ -2,7 +2,8 @@
   .image
     .bike_slider
       - bike.pictures.each do |picture|
-        = image_tag picture.img.url(:medium_l)
+        = link_to picture.img.url do
+          = image_tag picture.img.url(:medium_l)
   .title
     h1 = bike.title
 
