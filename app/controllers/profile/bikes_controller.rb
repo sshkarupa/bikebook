@@ -7,6 +7,8 @@ class Profile::BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    @departments = Department.all.map { |dep| [dep.name, dep.id]}
+    @cities = City.where(department_id: 1)
     1.times { @bike.pictures.build }
   end
 
@@ -17,9 +19,12 @@ class Profile::BikesController < ApplicationController
 
   def create
     @bike = current_user.bikes.build(bike_params)
+
+    bike_location @bike
+
     if @bike.save
       redirect_to profile_bikes_path
-      flash[:notice] = "success create"
+      flash[:notice] = "Объявление создано"
     else
       render :new
     end
@@ -37,6 +42,7 @@ class Profile::BikesController < ApplicationController
 
   def edit
     @bike = current_user.bikes.find(params[:id])
+    bike_location @bike
   end
 
   def destroy
@@ -49,7 +55,15 @@ class Profile::BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:title, :description, :bike_type,  :gears, :wheels, :suspension, :sex, :price, pictures_attributes: [:id, :img, :_destroy])
+    params.require(:bike).permit(:title, :description, :bike_type, :city, :department, :gears, :wheels, :suspension, :sex, :price, pictures_attributes: [:id, :img, :_destroy])
   end
+
+  def bike_location bike
+    @departments = Department.all.map { |dep| [dep.name, dep.id]}
+    @department_selected = Department.find(bike.department).id.presence || 1
+    @cities = City.where(department_id: @department_selected)
+    @city_selected = City.find(@department_selected).id.presence || 1
+  end
+
 
 end

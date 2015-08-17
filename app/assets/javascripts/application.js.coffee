@@ -37,7 +37,25 @@ init = ->
     $('.flash').fadeOut()
   ,4000)
 
-  $('input, select').styler()
+  $('.form_group.department select').styler
+    selectSearch: true
+    onSelectClosed: ->
+      $city = $('.form_group.city select')
+      city = $('select').val()
+      $.ajax
+        url: '/cities/' + city
+        type: "GET"
+        success: (data)->
+          $city.find("option").each -> $(this).remove()
+          for val in data.cities
+            $city.append($("<option></option>").attr("value", val.id).text(val.name))
+        complete: ->
+          $city.attr('disabled', false).trigger('refresh')
+        error: ->
+#          alert('Internal error. Please try again.')
+
+  $('input, select').styler
+    selectSearch: true
   $(document).on 'nested:fieldAdded', ->
     $('input, select').styler() # 'couse can't fired trigger('refresh')
 

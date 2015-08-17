@@ -3,6 +3,10 @@
     = f.input :title
   .form_group
     = f.input :description, as: :text
+  .form_group.department
+    = f.input :department, collection: @departments, :selected => @department_selected
+  .form_group.city
+    = f.input :city, collection: @cities, :selected => @city_selected
   .form_group
     = f.input :bike_type, collection: Bike.bikes_type
   .form_group

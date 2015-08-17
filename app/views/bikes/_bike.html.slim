@@ -14,6 +14,9 @@
     .bike_group
       span Почта:
       = @user.email
+    .bike_group
+      span Город:
+      = @city.name
   .config
     = render'shared/bike_config', bike: bike
   - if bike.description.present?
