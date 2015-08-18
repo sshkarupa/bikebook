@@ -2,14 +2,15 @@ class Profile::BikesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bikes = current_user.bikes
+    @bikes = current_user.bikes.order(created_at: :desc)
   end
 
   def new
     @bike = Bike.new
     @departments = Department.all.map { |dep| [dep.name, dep.id]}
     @cities = City.where(department_id: 1)
-    1.times { @bike.pictures.build }
+    bike_config
+    @bike.pictures.build
   end
 
   def show
@@ -19,9 +20,9 @@ class Profile::BikesController < ApplicationController
 
   def create
     @bike = current_user.bikes.build(bike_params)
-
+    bike_config
     bike_location @bike
-
+    @bike.pictures.build
     if @bike.save
       redirect_to profile_bikes_path
       flash[:notice] = "Объявление создано"
@@ -42,6 +43,7 @@ class Profile::BikesController < ApplicationController
 
   def edit
     @bike = current_user.bikes.find(params[:id])
+    bike_config
     bike_location @bike
   end
 
@@ -59,11 +61,16 @@ class Profile::BikesController < ApplicationController
   end
 
   def bike_location bike
-    @departments = Department.all.map { |dep| [dep.name, dep.id]}
+    @departments = Department.all.map { |el| [el.name, el.id]}
     @department_selected = Department.find(bike.department).id.presence || 1
     @cities = City.where(department_id: @department_selected)
     @city_selected = City.find(@department_selected).id.presence || 1
   end
 
+  def bike_config
+    @bike_types = BikeType.all.map { |el| [el.name, el.id]}
+    @suspension = Suspension.all.map { |el| [el.name, el.id]}
+    @sex = Sex.all.map { |el| [el.name, el.id]}
+  end
 
 end

@@ -1,6 +1,6 @@
 .bike_group
   span Тип велосипеда:
-  = bike.bike_type
+  = type_name bike.bike_type
 
 - if bike.gears.present?
   .bike_group
@@ -15,12 +15,12 @@
 - if bike.suspension.present?
   .bike_group
     span Подвеска:
-    = bike.suspension
+    = suspension_name bike.suspension
 
 - if bike.sex.present?
   .bike_group
     span Пол:
-    = bike.sex
+    = sex_name bike.sex
 
 .bike_group
   span Цена:

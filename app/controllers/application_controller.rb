@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
       new_profile_bike_path
     end
   end
-
+  
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :phone

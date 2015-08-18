@@ -5,11 +5,11 @@ class CreateBikes < ActiveRecord::Migration
       t.boolean :status
       t.string :title
       t.text :description
-      t.string :bike_type
+      t.integer :bike_type
       t.integer :wheels
       t.integer :gears
-      t.string :suspension
-      t.string :sex
+      t.integer :suspension
+      t.integer :sex
       t.integer :price
 
       t.timestamps null: false

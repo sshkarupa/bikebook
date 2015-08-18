@@ -9,3 +9,25 @@ JSON::parse(russia_db).each do |item|
     department.cities.create!(:name => city)
   end
 end
+
+# Add bike_types
+BikeType.create!(name: "Горный велосипед")
+BikeType.create!(name: "Городской велосипед")
+BikeType.create!(name: "Шоссейный велосипед")
+BikeType.create!(name: "Гибридный велосипед")
+BikeType.create!(name: "MTB")
+BikeType.create!(name: "BMX")
+BikeType.create!(name: "29er")
+BikeType.create!(name: "Фэт-байк")
+BikeType.create!(name: "Электровелосипед")
+
+# Add sex
+Sex.create!(name: "Мужской")
+Sex.create!(name: "Женский")
+Sex.create!(name: "Юнисекс")
+Sex.create!(name: "Детский")
+
+# Add suspension
+Suspension.create!(name: "С двумя амортизаторами")
+Suspension.create!(name: "C одним амортизатором")
+Suspension.create!(name: "Без амортизаторов")

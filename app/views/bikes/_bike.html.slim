@@ -15,7 +15,9 @@
       span Почта:
       = @user.email
     .bike_group
-      span Город:
+      span Находится:
+      = @department.name
+      |, 
       = @city.name
   .config
     = render'shared/bike_config', bike: bike
