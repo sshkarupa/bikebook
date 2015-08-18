@@ -22,7 +22,6 @@ class Profile::BikesController < ApplicationController
     @bike = current_user.bikes.build(bike_params)
     bike_config
     bike_location @bike
-    @bike.pictures.build
     if @bike.save
       redirect_to profile_bikes_path
       flash[:notice] = "Объявление создано"
