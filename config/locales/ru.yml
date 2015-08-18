@@ -92,6 +92,8 @@ ru:
         title: "Заголовок объявления"
         bike_type: "Тип велосипеда"
         wheels: "Размер колес"
+        city: "Город"
+        department: "Область"
 
 
       user:
