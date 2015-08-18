@@ -2,6 +2,11 @@
   span Тип велосипеда:
   = type_name bike.bike_type
 
+- if bike.suspension.present?
+  .bike_group
+    span Подвеска:
+    = suspension_name bike.suspension
+
 - if bike.gears.present?
   .bike_group
     span Количество скоростей:
@@ -11,11 +16,6 @@
   .bike_group
     span Размер колес:
     = bike.wheels
-
-- if bike.suspension.present?
-  .bike_group
-    span Подвеска:
-    = suspension_name bike.suspension
 
 - if bike.sex.present?
   .bike_group

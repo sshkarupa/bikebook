@@ -52,7 +52,44 @@ init = ->
         complete: ->
           $city.attr('disabled', false).trigger('refresh')
         error: ->
-#          alert('Internal error. Please try again.')
+          alert('Internal error. Please try again.')
+
+  $('.show_phone').on 'click', ->
+    el = $(this)
+    id = el.data('phone')
+    $.ajax
+      url: '/bikes/' + id
+      type: "GET"
+      dataType: 'json'
+      beforeSend: ->
+        el.addClass('loading')
+      success: (data)->
+        parent = el.siblings('span')
+        el.remove()
+        parent.after(data.phone)
+        el.removeClass('loading')
+      error: ->
+        el.removeClass('loading')
+        alert('Internal error. Please try again.')
+
+  $('.show_email').on 'click', ->
+    el = $(this)
+    id = el.data('email')
+    $.ajax
+      url: '/bikes/' + id
+      type: "GET"
+      dataType: 'json'
+      beforeSend: ->
+        el.addClass('loading')
+      success: (data)->
+        parent = el.siblings('span')
+        el.remove()
+        parent.after(data.email)
+        el.removeClass('loading')
+      error: ->
+        el.removeClass('loading')
+        alert('Internal error. Please try again.')
+
 
   $('input, select').styler
     selectSearch: true

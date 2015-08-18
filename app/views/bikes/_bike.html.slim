@@ -10,10 +10,10 @@
   .owner
     .bike_group
       span Телефон:
-      = @user.phone
+      span.show_phone.lazy_load data-phone="#{@user.id}"
     .bike_group
       span Почта:
-      = @user.email
+      span.show_email.lazy_load data-email="#{@user.id}"
     .bike_group
       span Находится:
       = @department.name

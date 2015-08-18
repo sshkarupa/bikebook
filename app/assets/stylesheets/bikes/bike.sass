@@ -7,6 +7,15 @@
     position: relative
     img
       margin: auto
+  .show_phone
+    &:before
+      content: "Показать телефон"
+  .show_email
+    &:before
+      content: "Показать почту"
+  .show_email, .show_phone
+    &.loading:before
+      content: "Загрузка..."
   .bx-wrapper
     visibility: hidden
   .title, .owner, .config, .description
