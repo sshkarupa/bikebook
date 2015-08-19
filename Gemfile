@@ -18,6 +18,8 @@ gem 'simple_form'
 gem "simple-navigation"
 gem "paperclip", "~> 4.3"
 gem "nested_form"
+gem 'rails_admin'
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   gem 'byebug'

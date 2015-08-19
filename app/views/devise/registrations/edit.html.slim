@@ -5,6 +5,9 @@
     .form_group
       = f.label :email
       = f.email_field :email
+    .form_group
+      = f.label :name
+      = f.text_field :name
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       div
         | Currently waiting confirmation for:

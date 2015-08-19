@@ -9,6 +9,9 @@
 
   .owner
     .bike_group
+      span Владелец:
+      = @user.name
+    .bike_group
       span Телефон:
       span.show_phone.lazy_load data-phone="#{@user.id}"
     .bike_group
