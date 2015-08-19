@@ -10,12 +10,14 @@ init = ->
       navigateByImgClick: true
       preload: [0, 1]
 
-  $(".bike_slider").owlCarousel
+  owl = $(".bike_slider")
+  slides = if owl.find('a').length <= 1 then false else true
+  owl.owlCarousel
     items: 1
-    nav: true
+    nav: slides
+    dots: slides
     navText: ["",""]
     loop: false
-
 
   $('.show_phone').on 'click', ->
     el = $(this)
