@@ -87,7 +87,8 @@
   right: 0;
   height: 0;
   @media (max-width: 980px) {
-    display: none;
+    bottom: 40px;
+    top: auto;
   }
 }
 .owl-dots {
@@ -105,12 +106,13 @@
   display: inline-block;
   margin: 0 5px;
   cursor: pointer;
+  &.active, &:hover {
+    background-color: #5676af;
+  }
   @media (max-width: 980px) {
     width: 10px;
     height: 10px;
-  }
-  &.active, &:hover {
-    background-color: #5676af;
+
   }
 }
 .owl-carousel .owl-controls .owl-nav .owl-prev,
@@ -132,6 +134,12 @@
   &:hover {
     background-color: #5676af;
     color: white;
+  }
+  @media (max-width: 980px) {
+    &:hover {
+      background-color: white;
+      color: black;
+    }
   }
 }
 .owl-carousel .owl-controls .owl-nav .owl-prev {
