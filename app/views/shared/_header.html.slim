@@ -1,5 +1,7 @@
 #header
   .inner_content
+    .mobile_nav_trigger
+      .icon-menu
     - if user_signed_in? && current_user.role == 'admin'
       = render_navigation :context => :admin, :expand_all => false, renderer: :links
     - elsif user_signed_in? && current_user.role == 'user'

@@ -1,27 +1,39 @@
-.nav_footer
-  text-align: right
-.nav a
-  +inline-block(middle)
+.mobile_nav_trigger
+  display: none
   height: 40px
-  line-height: 38px
-  padding: 0 10px
-  color: white
-  text-decoration: none
   +user-select(none)
-  &#home
-    float: left
-  &:hover
-    background-color: white
-    color: black
-  &#destroy_user_session:hover
-    background-color: #e25d5d
+  .icon-menu
+    padding-top: 10px
     color: white
-  &.selected
-    background-color: white
-    color: black
-    &:hover
-      background-color: white
   +mobile
     display: block
+.nav_footer
+  text-align: right
+.nav
+  +mobile
+    display: none
+  a
+    +inline-block(middle)
+    height: 40px
+    line-height: 38px
+    padding: 0 10px
+    color: white
+    text-decoration: none
+    +user-select(none)
     &#home
-      float: none
+      float: left
+    &:hover
+      background-color: white
+      color: black
+    &#destroy_user_session:hover
+      background-color: #e25d5d
+      color: white
+    &.selected
+      background-color: white
+      color: black
+      &:hover
+        background-color: white
+    +mobile
+      display: block
+      &#home
+        float: none

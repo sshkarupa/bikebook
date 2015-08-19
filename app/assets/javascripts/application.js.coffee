@@ -10,6 +10,9 @@
 
 init = ->
 
+  $('.mobile_nav_trigger').on 'click', ->
+    $(this).siblings('.nav').toggle()
+
   if $('.edit_fields .fields').length <= 1
     $('.edit_fields').find('.btn_danger').hide()
 
