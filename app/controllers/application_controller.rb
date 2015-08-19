@@ -11,12 +11,16 @@ class ApplicationController < ActionController::Base
       new_profile_bike_path
     end
   end
-  
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to '/', :alert => exception.message
+  end
+
   protected
   def configure_permitted_parameters
-
     devise_parameter_sanitizer.for(:sign_up) << [:phone, :name]
     devise_parameter_sanitizer.for(:account_update) << [:phone, :name]
   end
+
 
 end
