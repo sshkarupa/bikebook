@@ -1,5 +1,5 @@
 .profile_bike
-  height: 200px
+  height: 232.5px
   margin: 20px 0
   padding: 0 !important
   +clearfix
@@ -12,15 +12,33 @@
       color: black
   .image, .config, .description
     float: left
-  .config, .description
-    padding: 0 20px
   .config
+    padding: 0 20px
     width: 300px
   .description
-    width: 400px
+    width: 365px
   .services
     position: absolute
     right: 0
     bottom: 0
     a
       font-size: 15px
+  +mobile
+    width: 232.5px
+    margin: 20px auto
+    .title
+      position: absolute
+      padding: 10px
+      a
+        color: white
+        font-size: 15px
+    .config, .description
+      display: none
+    .services
+      .btn_primary
+        width: 140px
+      .btn_danger
+        width: 88px
+      a
+        font-size: 14px
+        padding: 3px 0

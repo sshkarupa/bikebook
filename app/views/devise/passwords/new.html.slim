@@ -1,5 +1,6 @@
-.basic_form.devise.wrap_box
+.profile_head
   h2 Забыли пароль?
+.basic_form.devise.wrap_box
   = devise_error_messages!
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     .form_group

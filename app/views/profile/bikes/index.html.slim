@@ -1,5 +1,7 @@
 - if @bikes.any?
+  .profile_head
+    h2 Мои объявления
   = render @bikes
 - else
-  .no_bikes
+  .profile_head
     h2 У Вас пока нет объявлений
