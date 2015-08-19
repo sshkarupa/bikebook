@@ -6,12 +6,12 @@
 #= require vendor/nprogress
 #= require vendor/jquery.formstyler
 #= require vendor/minigrid
-#= require lib/forms
 #= require shared/flash
 #= require shared/header
 #= require bikes/bike
 #= require profile/bikes/new
 #= require pages/home
+#= require lib/forms
 #= require_tree .
 
 init = ->
