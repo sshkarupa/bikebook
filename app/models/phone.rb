@@ -4,7 +4,7 @@ class Phone < ActiveRecord::Base
 
   before_create :phone_format
   before_validation :phone_format
-  
+
   def phone_format
     self.number = number.gsub(/[\s()-]/, '')
   end

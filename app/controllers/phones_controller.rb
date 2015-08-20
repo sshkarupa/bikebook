@@ -2,7 +2,7 @@ require 'bcrypt'
 require 'net/http'
 
 class PhonesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show_user_phone
 
   def show_user_phone
     @phone = Phone.find(params[:id])

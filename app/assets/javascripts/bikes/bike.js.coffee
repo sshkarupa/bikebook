@@ -22,7 +22,6 @@ init = ->
   $('.show_phone').on 'click', ->
     el = $(this)
     id = el.data('phone')
-    console.log id
     $.ajax
       url: '/phones/show_user_phone/' + id
       type: "GET"
