@@ -18,9 +18,10 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:phone, :name]
-    devise_parameter_sanitizer.for(:account_update) << [:phone, :name]
+    devise_parameter_sanitizer.for(:sign_up) << [[phone_attributes: [:id, :number, :_destroy]], :name]
+    devise_parameter_sanitizer.for(:account_update) << [[phone_attributes: [:id, :number, :_destroy]], :name]
   end
 
 
 end
+

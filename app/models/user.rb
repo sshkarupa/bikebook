@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :bikes, dependent: :destroy
-  validates :email, :phone, :name, presence: true
+  has_one :phone, dependent: :destroy
+  accepts_nested_attributes_for :phone, :allow_destroy => true
+  validates :email, :name, presence: true
 
   before_create :set_role
 

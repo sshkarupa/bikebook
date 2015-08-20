@@ -14,8 +14,11 @@
         | Currently waiting confirmation for:
         = resource.unconfirmed_email
     .form_group
-      = f.label :phone
-      = f.text_field :phone
+      = f.simple_fields_for :phone do |i|
+        = i.input :number
+        input.check_phone
+        span.check_phone_send data-phone-id=current_user.phone.id Отправить
+      span.phone_check Проверить телефон
     .form_group.with_right_desc
       = f.label :password
       .desc

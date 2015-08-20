@@ -10,8 +10,8 @@
       = f.label :name
       = f.text_field :name
     .form_group
-      = f.label :phone
-      = f.text_field :phone
+      = f.simple_fields_for :phone do |i|
+        = i.input :number
     .form_group.with_right_desc
       = f.label :password
       - if @minimum_password_length

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'cities/show'
 
   root 'pages#home'
 
@@ -8,8 +7,9 @@ Rails.application.routes.draw do
     resources :bikes, except: :show
   end
   resources :cities, only: :show
-
   resources :bikes, only: :show
+  resources :phones, only: :update
+  get 'phones/send_sms', to: 'phones#send_sms'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 end

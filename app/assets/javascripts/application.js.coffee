@@ -10,6 +10,7 @@
 #= require shared/header
 #= require bikes/bike
 #= require profile/bikes/new
+#= require profile/phones
 #= require pages/home
 #= require lib/forms
 #= require_tree .
