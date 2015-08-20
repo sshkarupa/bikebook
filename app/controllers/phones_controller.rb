@@ -4,6 +4,15 @@ require 'net/http'
 class PhonesController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @phone = Phone.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @phone }
+    end
+  end
+
   def update
     @phone = Phone.find(params[:id])
     @send_key = params[:sms_key].to_i

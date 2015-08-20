@@ -22,8 +22,9 @@ init = ->
   $('.show_phone').on 'click', ->
     el = $(this)
     id = el.data('phone')
+    console.log id
     $.ajax
-      url: '/bikes/' + id
+      url: '/phones/' + id
       type: "GET"
       dataType: 'json'
       beforeSend: ->
@@ -31,7 +32,9 @@ init = ->
       success: (data)->
         parent = el.siblings('span')
         el.remove()
-        parent.after(data.phone)
+        parent.after(
+          data.number.replace /(\d)(\d\d\d)(\d\d\d)(\d\d)(\d\d)/, '$1 ($2) $3-$4-$5'
+        )
         el.removeClass('loading')
       error: ->
         el.removeClass('loading')

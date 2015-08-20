@@ -11,12 +11,13 @@
     .bike_group
       span Владелец:
       = @user.name
-    .bike_group
-      span Телефон:
-      span.show_phone.lazy_load data-phone="#{@user.id}"
+    - if @user.phone.activated
+      .bike_group
+        span Телефон:
+        span.show_phone.lazy_load data-phone="#{@user.phone.id}"
     .bike_group
       span Почта:
-      span.show_email.lazy_load data-email="#{@user.id}"
+      span.show_email.lazy_load data-email="#{@bike.id}"
     .bike_group
       span Находится:
       = @department.name

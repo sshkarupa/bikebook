@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :cities, only: :show
   resources :bikes, only: :show
-  resources :phones, only: :update
+  resources :phones, only: [:update, :show]
   get 'phones/send_sms', to: 'phones#send_sms'
 
   devise_for :users, controllers: { registrations: "registrations" }
