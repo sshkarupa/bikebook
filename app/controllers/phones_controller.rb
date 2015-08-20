@@ -4,7 +4,7 @@ require 'net/http'
 class PhonesController < ApplicationController
   before_action :authenticate_user!
 
-  def show
+  def show_user_phone
     @phone = Phone.find(params[:id])
 
     respond_to do |format|

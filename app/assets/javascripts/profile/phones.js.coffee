@@ -4,7 +4,6 @@ init = ->
     $.ajax
       url: '/phones/send_sms'
       type: "GET"
-
       beforeSend: ->
         console.log 'inactive link'
       success: (data)->
@@ -24,7 +23,6 @@ init = ->
       beforeSend: ->
         console.log 'inactive link'
       success: (data)->
-        console.log data
         console.log 'active link'
       error: ->
         console.log 'Internal error. Please try again.'

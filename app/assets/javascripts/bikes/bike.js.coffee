@@ -24,7 +24,7 @@ init = ->
     id = el.data('phone')
     console.log id
     $.ajax
-      url: '/phones/' + id
+      url: '/phones/show_user_phone/' + id
       type: "GET"
       dataType: 'json'
       beforeSend: ->
