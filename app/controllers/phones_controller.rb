@@ -35,12 +35,12 @@ class PhonesController < ApplicationController
   def send_sms
     @key = generate_key
 
-    message = MainsmsApi::Message.new(sender: 'bikebook', message: "Код водтверждения: #{@key}", recipients: ['89150300200'])
+    # message = MainsmsApi::Message.new(sender: 'bikebook', message: "Код водтверждения: #{@key}", recipients: ['89150300200'])
 
     hashed_key = BCrypt::Password.create(@key)
     update_sms_key hashed_key
 
-    render json: { res: message.deliver }
+    # render json: { res: message.deliver }
   end
 
   def update_sms_key hashed_key
