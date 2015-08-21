@@ -4,6 +4,7 @@
 @import "lib/*"
 @import "vendor/*"
 @import "shared/*"
+@import "devise/*"
 @import "bikes/*"
 @import "pages/*"
 @import "profile/*"
@@ -41,12 +42,18 @@ a
   background-color: white
   +box-shadow(0 0px 5px 0 rgba(0, 0, 0, 0.1))
 
-.lazy_load
+.ajax_link
   color: #0088CC
   text-decoration: none
   border-bottom: 1px dashed #0088CC
   cursor: pointer
   font-weight: normal
+
+.ajax_link_light
+  @extend .ajax_link
+  color: white
+  border-bottom: 1px dashed white
+
 
 +sticky-footer(40px)
 

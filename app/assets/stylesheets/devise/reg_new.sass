@@ -1,0 +1,66 @@
+.form_group
+  position: relative
+  .notice
+    position: relative
+    background-color: white
+    padding: 10px
+    font-size: 14px
+    margin: 10px 0
+  .input, .send_sms, input, span
+    position: relative
+  &.inactivated, &.activated
+    padding: 10px 0
+    &:before
+      content: ""
+      display: block
+      height: 100%
+      left: -20px
+      right: -20px
+      top: 0
+      bottom: 0
+      position: absolute
+    label
+      color: white
+  &.activated
+    label
+      color: black
+    .notice
+      display: none
+    .input
+      margin-bottom: 15px
+    .phone_check_form, .send_sms
+      display: none
+    &:before
+      background-color: #BFFFD5
+  &.inactivated:before
+    background-color: #e25d5d
+
+.check_phone_send
+  &:before
+    content: 'Отправить'
+  &.sending:before
+    content: 'Отправляю'
+
+
+
+.send_sms
+  margin-top: 5px
+  display: inline-block
+  &:before
+    content: "Подтвердить телефон"
+  &.done
+    color: #E4E4E4
+    border-bottom-color: transparent
+    &:before
+      content: "Повторная отправка возможна через - "
+
+.phone_check_form
+  display: none
+  +clearfix
+  input
+    margin-top: 5px
+    margin-right: 20px
+    width: 100px !important
+    +inline-block(middle)
+  .check_phone_send
+    +inline-block(middle)

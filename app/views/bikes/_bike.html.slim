@@ -14,10 +14,10 @@
     - if @user.phone.activated
       .bike_group
         span Телефон:
-        span.show_phone.lazy_load data-phone="#{@user.phone.id}"
+        span.show_phone.ajax_link data-phone="#{@user.phone.id}"
     .bike_group
       span Почта:
-      span.show_email.lazy_load data-email="#{@bike.id}"
+      span.show_email.ajax_link data-email="#{@bike.id}"
     .bike_group
       span Находится:
       = @department.name

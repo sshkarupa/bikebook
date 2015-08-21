@@ -13,12 +13,16 @@
       div
         | Currently waiting confirmation for:
         = resource.unconfirmed_email
-    .form_group
+    .form_group class="#{if current_user.phone.activated then 'activated' else 'inactivated'}"
+      .notice Ваш номер телефона не подтвержден, подтвердждение телефона необходимо для указания его в качестве контакта при подаче объявления
       = f.simple_fields_for :phone do |i|
         = i.input :number
-        input.check_phone
-        span.check_phone_send data-phone-id=current_user.phone.id Отправить
-      span.phone_check Проверить телефон
+      - unless current_user.phone.activated
+        .phone_check_form.input
+          input.check_phone type="text" placeholder="Смс код"
+          span.check_phone_send.ajax_link_light data-phone-id=current_user.phone.id
+        span.send_sms.ajax_link_light
+          span.timer
     .form_group.with_right_desc
       = f.label :password
       .desc
