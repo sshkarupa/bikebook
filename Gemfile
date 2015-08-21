@@ -21,7 +21,7 @@ gem "nested_form"
 gem 'rails_admin'
 gem 'cancancan', '~> 1.10'
 gem 'bcrypt'
-gem 'mainsms_api'
+# gem 'mainsms_api'
 
 group :development, :test do
   gem 'byebug'
