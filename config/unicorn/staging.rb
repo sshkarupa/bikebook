@@ -2,7 +2,7 @@ rails_env = ENV['RAILS_ENV'] || 'production'
 
 deploy_to = "/home/deploy/www/bikebook_staging"
 rails_root = "#{deploy_to}/current"
-pid_file = "/home/deploy/www/bikebook_staging/shared/tmp/pids/unicorn.pid"
+pid_file = "#{deploy_to}/shared/tmp/pids/unicorn.pid"
 # socket_file= "#{deploy_to}/shared/sockets/unicorn.sock"
 log_file = "#{deploy_to}/shared/log/unicorn.log"
 err_log_file = "#{deploy_to}/shared/log/unicorn.error.log"

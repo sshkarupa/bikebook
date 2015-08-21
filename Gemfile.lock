@@ -20,6 +20,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_attr (0.8.5)
+      activemodel (>= 3.0.2, < 5.0)
+      activesupport (>= 3.0.2, < 5.0)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -115,7 +118,11 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    hashie (3.4.2)
     hike (1.2.3)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     hub (1.12.4)
     i18n (0.7.0)
     interception (0.5)
@@ -137,12 +144,19 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mainsms_api (0.0.8)
+      active_attr
+      activesupport
+      hashie
+      httparty
+      signed_parameters
     method_source (0.8.2)
     mime-types (2.6.1)
     mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.8.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -229,6 +243,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    signed_parameters (0.0.4)
+      activesupport (>= 2.2.1)
     simple-navigation (4.0.3)
       activesupport (>= 2.3.2)
     simple_form (3.1.0)
@@ -302,6 +318,7 @@ DEPENDENCIES
   hub
   jbuilder (~> 2.0)
   jquery-rails
+  mainsms_api
   nested_form
   paperclip (~> 4.3)
   pg
