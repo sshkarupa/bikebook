@@ -2,8 +2,8 @@ rails_env = ENV['RAILS_ENV'] || 'production'
 
 deploy_to = "/home/deploy/www/bikebook_staging"
 rails_root = "#{deploy_to}/current"
-pid_file = "#{deploy_to}/shared/tmp/pids/unicorn.pid"
-socket_file= "#{deploy_to}/shared/sockets/unicorn.sock"
+pid_file = "/home/deploy/www/bikebook_staging/shared/tmp/pids/unicorn.pid"
+# socket_file= "#{deploy_to}/shared/sockets/unicorn.sock"
 log_file = "#{deploy_to}/shared/log/unicorn.log"
 err_log_file = "#{deploy_to}/shared/log/unicorn.error.log"
 
@@ -17,8 +17,8 @@ timeout 120
 # Specify path to socket unicorn listens to,
 # we will use this in our nginx.conf later
 
-listen socket_file, backlog: 64
-# listen "127.0.0.1:16018"
+# listen socket_file, backlog: 64
+listen "127.0.0.1:16018"
 
 # Set process id path
 pid pid_file
