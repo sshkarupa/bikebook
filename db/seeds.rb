@@ -1,4 +1,4 @@
-User.create(email: 'p.scheglov@gmail.com', password: '543424345', password_confirmation: '543424345', phone: '+7 (915) 030-02-00', role: 'admin', name: 'Павел')
+User.create(email: 'p.scheglov@gmail.com', password: '543424345', password_confirmation: '543424345', phone: '89150300200', role: 'admin', name: 'Павел')
 
 # Add cities to department from russia db
 db_path = File.expand_path("../russia.json", __FILE__)
