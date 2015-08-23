@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   before_create :set_role
 
-  private
+  protected
   def set_role
     self.role = 'user'
   end

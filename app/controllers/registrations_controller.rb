@@ -6,4 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
     respond_with self.resource
   end
 
+  def after_update_path_for(resource)
+    edit_user_registration_path
+  end
 end
