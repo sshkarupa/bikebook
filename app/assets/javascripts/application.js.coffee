@@ -27,6 +27,7 @@ init = ->
     NProgress.remove()
     return
 
+
 $(document).on('page:change', init)
 
 # ie8 turbolinks fix

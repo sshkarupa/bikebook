@@ -21,9 +21,9 @@ class PhonesController < ApplicationController
 
     if @sms_key == @send_key
       @phone.update(activated: true)
-      render json: { success: "Телефон активирован" }
+      render json: { message: {success: 'Телефон активирован'}}
     else
-      render json: { error: "Неверный код" }
+      render json: { message: {alert: 'Неверный код'}}, status: 400
     end
 
   end
@@ -35,12 +35,19 @@ class PhonesController < ApplicationController
   def send_sms
     @key = generate_key
 
-    message = MainsmsApi::Message.new(sender: 'bikebook', message: "Код подтверждения: #{@key}", recipients: [current_user.phone.number])
+    response = MainsmsApi::Message.new(sender: 'bikebook', message: "Код подтверждения: #{@key}", recipients: [current_user.phone.number], test: 1)
+
+    sms_status = response.deliver.status
 
     hashed_key = BCrypt::Password.create(@key)
     update_sms_key hashed_key
 
-    render json: { res: message.deliver, recipients: message.recipients }
+    if sms_status == 'success'
+      render json: { message: {success: 'Сообщение отправлено'} , res: response}
+    else
+      render json: { message: {alert: 'Сообщение не отправлено, попробуйте еще раз'}}, status: 400
+    end
+
   end
 
   def update_sms_key hashed_key

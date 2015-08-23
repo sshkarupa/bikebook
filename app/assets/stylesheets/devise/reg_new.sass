@@ -6,7 +6,7 @@
     padding: 10px
     font-size: 14px
     margin: 10px 0
-  .input, .send_sms, input, span
+  .input, .send_sms_btn, input, span
     position: relative
   &.inactivated, &.activated
     padding: 10px 0
@@ -35,15 +35,13 @@
   &.inactivated:before
     background-color: #e25d5d
 
-.check_phone_send
+.check_sms_btn
   &:before
     content: 'Отправить'
   &.sending:before
     content: 'Отправляю'
 
-
-
-.send_sms
+.send_sms_btn
   margin-top: 5px
   display: inline-block
   &:before
@@ -54,7 +52,7 @@
     &:before
       content: "Повторная отправка возможна через - "
 
-.phone_check_form
+.check_sms_form
   display: none
   +clearfix
   input
@@ -62,5 +60,5 @@
     margin-right: 20px
     width: 100px !important
     +inline-block(middle)
-  .check_phone_send
+  .check_sms_btn
     +inline-block(middle)

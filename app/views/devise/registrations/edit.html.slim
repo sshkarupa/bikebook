@@ -18,10 +18,10 @@
       = f.simple_fields_for :phone do |i|
         = i.input :number
       - unless current_user.phone.activated
-        .phone_check_form.input
-          input.check_phone type="text" placeholder="Смс код"
-          span.check_phone_send.ajax_link_light data-phone-id=current_user.phone.id
-        span.send_sms.ajax_link_light
+        .check_sms_form.input
+          input.check_sms_input type="text" placeholder="Смс код"
+          span.check_sms_btn.ajax_link_light data-phone-id=current_user.phone.id
+        span.send_sms_btn.ajax_link_light
           span.timer
     .form_group.with_right_desc
       = f.label :password
