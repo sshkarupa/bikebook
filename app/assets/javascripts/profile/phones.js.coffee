@@ -22,9 +22,7 @@ init = ->
       url: '/phones/send_sms'
       type: "GET"
       beforeSend: -> resend_sms_timer $this
-      success: (data)->
-        console.log data
-        flasher data
+      success: (data)-> flasher data
       error: (data)-> flasher data
 
 

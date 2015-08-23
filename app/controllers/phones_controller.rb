@@ -35,7 +35,7 @@ class PhonesController < ApplicationController
   def send_sms
     @key = generate_key
 
-    response = MainsmsApi::Message.new(sender: 'bikebook', message: "Код подтверждения: #{@key}", recipients: [current_user.phone.number], test: 1)
+    response = MainsmsApi::Message.new(sender: 'bikebook', message: "Код подтверждения: #{@key}", recipients: [current_user.phone.number])
 
     sms_status = response.deliver.status
 
@@ -43,7 +43,7 @@ class PhonesController < ApplicationController
     update_sms_key hashed_key
 
     if sms_status == 'success'
-      render json: { message: {success: 'Сообщение отправлено'} , res: response}
+      render json: { message: {success: 'Сообщение отправлено'}}
     else
       render json: { message: {alert: 'Сообщение не отправлено, попробуйте еще раз'}}, status: 400
     end
