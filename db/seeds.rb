@@ -5,6 +5,7 @@ User.create(
     role: 'admin',
     name: 'Павел'
 )
+puts 'Add admin: [OK]'
 
 Add cities to department from russia db
 db_path = File.expand_path("../russia.json", __FILE__)
@@ -15,6 +16,7 @@ JSON::parse(russia_db).each do |item|
     department.cities.create!(:name => city)
   end
 end
+puts 'Add cities: [OK]'
 
 # Add bike_types
 BikeType.create!(name: "Горный велосипед")
@@ -26,18 +28,22 @@ BikeType.create!(name: "BMX")
 BikeType.create!(name: "29er")
 BikeType.create!(name: "Фэт-байк")
 BikeType.create!(name: "Электровелосипед")
+puts 'Add bike_types: [OK]'
 
 # Add sex
 Sex.create!(name: "Мужской")
 Sex.create!(name: "Женский")
 Sex.create!(name: "Юнисекс")
+puts 'Add sex: [OK]'
 
 # Add age
 Age.create!(name: "Взрослый")
 Age.create!(name: "Юниор")
 Age.create!(name: "Детский")
+puts 'Add age: [OK]'
 
 # Add suspension
 Suspension.create!(name: "С двумя амортизаторами")
 Suspension.create!(name: "C одним амортизатором")
 Suspension.create!(name: "Без амортизаторов")
+puts 'Add suspension: [OK]'
