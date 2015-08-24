@@ -1,6 +1,12 @@
-User.create(email: ENV['admin_email'], password: ENV['admin_password'], password_confirmation: ENV['admin_password'], role: 'admin', name: 'Павел')
+User.create(
+    email: ENV['admin_email'],
+    password: ENV['admin_password'],
+    password_confirmation: ENV['admin_password'],
+    role: 'admin',
+    name: 'Павел'
+)
 
-# Add cities to department from russia db
+Add cities to department from russia db
 db_path = File.expand_path("../russia.json", __FILE__)
 russia_db = open(db_path).read
 JSON::parse(russia_db).each do |item|
