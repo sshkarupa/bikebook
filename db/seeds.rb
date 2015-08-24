@@ -5,6 +5,8 @@ User.create(
     role: 'user',
     name: 'Павел'
 )
+Phone.create(number: ENV['admin_phone'], activated: true, user_id: 1)
+
 puts 'Add admin: [OK]'
 
 db_path = File.expand_path("../russia.json", __FILE__)
