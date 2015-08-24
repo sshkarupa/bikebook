@@ -1,6 +1,5 @@
 .profile_bike.wrap_box
-  .image
-    = image_tag bike.pictures.first.img.url(:medium)
+  .image style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url(:medium) : false})"
   .title
     h3 = link_to truncate(bike.title, length: 70), bike_path(bike), target: '_blank'
   .config
