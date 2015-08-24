@@ -6,4 +6,5 @@
 .bikes
   - @bikes.each do |bike|
     a.home_bike href="#{bike_path(bike)}" style="background-image: url(#{bike.pictures.any? ? bike.pictures.first.img.url(:medium) : false})"
-      .price.price_hl = human_price bike.price
+      .date.labled = pretty_date bike.created_at
+      .price.labled = human_price bike.price

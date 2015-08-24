@@ -12,4 +12,12 @@ module BikesHelper
     BikeType.find(bike).name
   end
 
+  def pretty_date date
+    if date.today?
+      "Сегодня в " + l(date, format: "%H:%M")
+    else
+      l(date, format: "%d %B %H:%M")
+    end
+  end
+
 end

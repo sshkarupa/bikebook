@@ -23,6 +23,9 @@
       = @department.name
       |, 
       = @city.name
+    .bike_group
+      span Дата создания объявления:
+      = pretty_date @bike.created_at
   .config
     = render'shared/bike_config', bike: bike
   - if bike.description.present?
