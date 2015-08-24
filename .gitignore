@@ -29,6 +29,7 @@ db/*.sqlite3
 .sass-cache
 /config/config.yml
 /config/database.yml
+/config/settings.yml
 /config/secrets.yml
 /config/mainsms.yml
 /coverage.data
