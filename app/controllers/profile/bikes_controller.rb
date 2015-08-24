@@ -56,7 +56,7 @@ class Profile::BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:title, :description, :bike_type, :city, :department, :gears, :wheels, :suspension, :sex, :price, pictures_attributes: [:id, :img, :_destroy])
+    params.require(:bike).permit(:title, :description, :bike_type, :city, :department, :gears, :wheels, :suspension, :sex, :age, :price, pictures_attributes: [:id, :img, :_destroy])
   end
 
   def bike_location bike
@@ -70,6 +70,7 @@ class Profile::BikesController < ApplicationController
     @bike_types = BikeType.all.map { |el| [el.name, el.id]}
     @suspension = Suspension.all.map { |el| [el.name, el.id]}
     @sex = Sex.all.map { |el| [el.name, el.id]}
+    @age = Age.all.map { |el| [el.name, el.id]}
   end
 
 end

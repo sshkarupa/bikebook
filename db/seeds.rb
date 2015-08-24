@@ -1,4 +1,4 @@
-User.create(email: 'p.scheglov@gmail.com', password: '543424345', password_confirmation: '543424345', role: 'admin', name: 'Павел')
+User.create(email: ENV['admin_email'], password: ENV['admin_password'], password_confirmation: ENV['admin_password'], role: 'admin', name: 'Павел')
 
 # Add cities to department from russia db
 db_path = File.expand_path("../russia.json", __FILE__)
@@ -25,7 +25,11 @@ BikeType.create!(name: "Электровелосипед")
 Sex.create!(name: "Мужской")
 Sex.create!(name: "Женский")
 Sex.create!(name: "Юнисекс")
-Sex.create!(name: "Детский")
+
+# Add age
+Age.create!(name: "Взрослый")
+Age.create!(name: "Юниор")
+Age.create!(name: "Детский")
 
 # Add suspension
 Suspension.create!(name: "С двумя амортизаторами")

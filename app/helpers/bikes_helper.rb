@@ -8,6 +8,10 @@ module BikesHelper
     Sex.find(bike).name
   end
 
+  def age_name bike
+    Age.find(bike).name
+  end
+
   def type_name bike
     BikeType.find(bike).name
   end

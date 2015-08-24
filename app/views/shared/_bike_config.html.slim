@@ -22,6 +22,11 @@
     span Пол:
     = sex_name bike.sex
 
+- if bike.age.present?
+  .bike_group
+    span Возраст:
+    = age_name bike.age
+
 .bike_group
   span Цена:
   span.labled = human_price bike.price

@@ -2,7 +2,7 @@ class Bike < ActiveRecord::Base
   belongs_to :user
   has_many :pictures, dependent: :destroy
   accepts_nested_attributes_for :pictures, :allow_destroy => true
-  validates :bike_type, :title, :price, presence: true
+  validates :bike_type, :title, :price, :city, :department, presence: true
 
   class << self
     def gears

@@ -1,4 +1,5 @@
 = simple_nested_form_for [:profile, @bike], html: {multipart: true} do |f|
+
   .form_group
     = f.input :title
   .form_group
@@ -9,14 +10,19 @@
     = f.input :city, collection: @cities, :selected => @city_selected
   .form_group
     = f.input :bike_type, collection: @bike_types
-  .form_group
-    = f.input :gears, collection: Bike.gears
-  .form_group
-    = f.input :wheels, collection: Bike.wheels
-  .form_group
-    = f.input :suspension, collection: @suspension
-  .form_group
-    = f.input :sex, collection: @sex
+  .no_required
+    .head Эти поля желательны, но необязательны для заполнения
+    .form_group
+      = f.input :gears, collection: Bike.gears
+    .form_group
+      = f.input :wheels, collection: Bike.wheels
+    .form_group
+      = f.input :suspension, collection: @suspension
+    .form_group
+      = f.input :sex, collection: @sex
+    .form_group
+      = f.input :age, collection: @age
+
   .form_group
     = f.input :price, as: :string, maxlength: 9
   - if params[:action] == 'edit' || params[:action] == 'update'
