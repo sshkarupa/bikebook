@@ -35,6 +35,7 @@ class Profile::BikesController < ApplicationController
 
     if @bike.update_attributes(bike_params)
       redirect_to profile_bikes_path
+      flash[:notice] = "Объявление сохранено"
     else
       render :edit
     end
@@ -50,6 +51,7 @@ class Profile::BikesController < ApplicationController
     @bike = current_user.bikes.find(params[:id])
     if @bike.destroy
       redirect_to profile_bikes_path
+      flash[:notice] = "Объявление удалено"
     else
       render :destroy
     end

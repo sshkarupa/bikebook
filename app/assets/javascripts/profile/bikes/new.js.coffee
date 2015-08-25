@@ -1,4 +1,7 @@
 init = ->
+
+  $('#bike_price').mask('000 000 000 000 000', {reverse: true})
+
   $('.city select').styler
     selectSearch: true
 
