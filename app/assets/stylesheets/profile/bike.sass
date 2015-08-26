@@ -15,8 +15,26 @@
     height: 232.5px
     background-position: center
     background-size: cover
+    position: relative
   .image, .config, .description
     float: left
+  .profile_bike_status
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    color: white
+    height: 30px
+    line-height: 30px
+    font-size: 16px
+    text-align: center
+    &.approved
+      background-color: #02bb6f
+    &.on_moderation
+      background-color: #FB6027
+    &.rejected
+      background-color: red
+
   .config
     padding: 0 20px
     width: 300px

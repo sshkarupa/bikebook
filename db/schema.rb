@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825062442) do
+ActiveRecord::Schema.define(version: 20150826065642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150825062442) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "user_id"
-    t.boolean  "status"
+    t.integer  "status",      default: 1
     t.string   "title"
     t.text     "description"
     t.integer  "bike_type"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150825062442) do
     t.integer  "suspension"
     t.integer  "sex"
     t.string   "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "city"
     t.integer  "department"
     t.integer  "age"
@@ -85,6 +85,12 @@ ActiveRecord::Schema.define(version: 20150825062442) do
   add_index "pictures", ["bike_id"], name: "index_pictures_on_bike_id", using: :btree
 
   create_table "sexes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

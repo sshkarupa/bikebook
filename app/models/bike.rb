@@ -7,6 +7,8 @@ class Bike < ActiveRecord::Base
   before_create :price_format
   before_validation :price_format
 
+  scope :approved, -> { where status: 2 }
+
   protected
   def price_format
     self.price = price.gsub(/[\s]/, '')
@@ -20,4 +22,41 @@ class Bike < ActiveRecord::Base
       29.downto 1
     end
   end
+
+
+  rails_admin do
+
+    list do
+      field :user
+      field :status, :enum do
+        enum do
+          Status.all.map { |c| [ c.name, c.id ] }
+        end
+      end
+      field :title
+      field :created_at
+
+    end
+
+    edit do
+      field :status, :enum do
+        enum do
+          Status.all.map { |c| [ c.name, c.id ] }
+        end
+      end
+      field :user
+      field :title
+      field :description
+      field :bike_type
+      field :wheels
+      field :gears
+      field :suspension
+      field :sex
+      field :age
+      field :price
+      field :pictures
+
+    end
+  end
+
 end

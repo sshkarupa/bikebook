@@ -24,4 +24,15 @@ module BikesHelper
     end
   end
 
+  def show_status bike
+    if bike.status == 1
+      {class: 'on_moderation', message: 'На модерации'}
+    elsif bike.status == 2
+      {class: 'approved', message: 'Одобрено'}
+    elsif bike.status == 3
+      {class: 'rejected', message: 'Отклонено'}
+    end
+
+  end
+
 end
