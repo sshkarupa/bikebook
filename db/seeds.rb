@@ -44,3 +44,8 @@ Suspension.create!(name: "С двумя амортизаторами")
 Suspension.create!(name: "C одним амортизатором")
 Suspension.create!(name: "Без амортизаторов")
 puts 'Add suspension: [OK]'
+
+Status.create!(name: "on_moderation")
+Status.create!(name: "approved")
+Status.create!(name: "rejected")
+puts 'Add statuses: [OK]'

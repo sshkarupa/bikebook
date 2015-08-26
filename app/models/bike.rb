@@ -6,12 +6,19 @@ class Bike < ActiveRecord::Base
   validates :price, :numericality => {:only_integer => true}
   before_create :price_format
   before_validation :price_format
+  before_update :drop_moderation
 
-  scope :approved, -> { where status: 2 }
+  scope :approved, -> { where status: 'approved' }
 
   protected
   def price_format
     self.price = price.gsub(/[\s]/, '')
+  end
+
+  def drop_moderation
+    if self.title_changed? || self.description_changed?
+      self.status = 'on_moderation'
+    end
   end
 
   class << self
@@ -41,7 +48,7 @@ class Bike < ActiveRecord::Base
     edit do
       field :status, :enum do
         enum do
-          Status.all.map { |c| [ c.name, c.id ] }
+          Status.all.map { |c| [ c.name, c.name ] }
         end
       end
       field :user
