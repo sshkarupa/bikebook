@@ -23,7 +23,9 @@ window.flasher =(data)->
   , 3000)
 
 init = ->
-
+  setTimeout(->
+    $('.flash').fadeOut()
+  , 3000)
 $(document).on('page:change', init)
 
 # ie8 turbolinks fix
