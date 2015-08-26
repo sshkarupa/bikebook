@@ -32,7 +32,8 @@ class Profile::BikesController < ApplicationController
 
   def update
     @bike = current_user.bikes.find(params[:id])
-
+    bike_config
+    bike_location @bike
     if @bike.update_attributes(bike_params)
       redirect_to profile_bikes_path
       flash[:notice] = "Объявление сохранено"
