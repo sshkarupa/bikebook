@@ -85,7 +85,6 @@ Rails.application.configure do
       :domain => 'bikebook.ru',
       :authentication => :plain,
       :user_name => ENV['yandex_mail_login'],
-      :password => ENV['yandex_mail_password'],
-      :enable_starttls_auto => true
+      :password => ENV['yandex_mail_password']
   }
 end
