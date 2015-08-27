@@ -58,6 +58,22 @@ class Profile::BikesController < ApplicationController
     end
   end
 
+  def moderation
+    @bikes = Bike.all.on_moderation
+    authorize! :all, @bikes
+  end
+
+  def moderation_update
+    @bike = Bike.find(params[:id])
+    authorize! :all, @bike
+
+    if @bike.update(status: params[:status])
+      render json: { message: {success: 'Статус успешно изменен'}}
+    else
+      render json: { message: {alert: 'Произошла ошибка'}}, status: 400
+    end
+  end
+
   def bike_params
     params.require(:bike).permit(:title, :description, :bike_type, :city, :department, :gears, :wheels, :suspension, :sex, :age, :price, pictures_attributes: [:id, :img, :_destroy])
   end

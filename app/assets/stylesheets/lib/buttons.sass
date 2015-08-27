@@ -8,33 +8,37 @@
   cursor: pointer
   border: 1px solid transparent
   padding: 9px 20px
-  font-size: 13px
+  font-size: 15px
   line-height: 1.5385
   +user-select(none)
   background-color: #CCCCCC
   text-decoration: none
+  &.loading, &.loading:hover
+    background-color: darkgray
 
 .btn_primary
   @extend .btn
   color: #fff
   background-color: #5676af
-  border-color: #496598
   &:hover
     background-color: #7992BF
-    border-color: #6884b7
 
+.btn_success
+  @extend .btn
+  background-color: #14A556
+  color: white
+  &:hover
+    background-color: #14ca70
 
 .btn_danger
   @extend .btn
   color: #fff
   background-color: #e25d5d
-  border-color: #d43f3a
   &[class^="icon-"]:before, [class*=" icon-"]:before
     font-size: 25px
     padding: 0 5px
   &:hover
     background-color: #e67373
-    border-color: #e67373
 
 .sell_bike_btn
   @extend .btn

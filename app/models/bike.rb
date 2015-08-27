@@ -9,6 +9,7 @@ class Bike < ActiveRecord::Base
   before_update :drop_moderation
 
   scope :approved, -> { where status: 'approved' }
+  scope :on_moderation, -> { where status: 'on_moderation' }
 
   protected
   def price_format

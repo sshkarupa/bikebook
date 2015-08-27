@@ -66,6 +66,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # end
     primary.item :home, 'На главную', root_path, class: 'go_home'
     primary.item :new_bike, 'Админка', rails_admin_path
+    primary.item :moderation, 'Модерация', profile_bikes_moderation_path
     primary.item :new_bike, 'Подать объявление', new_profile_bike_path
     primary.item :my_bikes, 'Мои объявления', profile_bikes_path
     primary.item :edit_user_registration, 'Мой профиль', edit_user_registration_path

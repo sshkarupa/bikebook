@@ -1,0 +1,13 @@
+.profile_head
+  h2 Модерация
+  - @bikes.each do |bike|
+    .moderation_bike.wrap_box data-bike-id=bike.id
+      .pictures
+        - bike.pictures.each do |picture|
+          = image_tag picture.img.url(:thumb)
+      .title= bike.title
+      .description= bike.description
+      .price= bike.price
+      .service
+        span.approve_bike.btn_success Approve
+        span.reject_bike.btn_danger Reject
