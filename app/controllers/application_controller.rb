@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if current_user.bikes.any?
+    if current_user.role == 'admin'
+      profile_bikes_moderation_path
+    elsif current_user.bikes.any?
       profile_bikes_path
     else
       new_profile_bike_path

@@ -1,0 +1,9 @@
+.inner_content
+  .basic_form
+    = simple_form_for @feedback, url: feedback_index_url do |f|
+      .form_group
+        = f.input :title
+      .form_group
+        = f.input :description, as: :text
+      .form_group.actions
+      = f.submit 'Отправить', class: 'btn_success'

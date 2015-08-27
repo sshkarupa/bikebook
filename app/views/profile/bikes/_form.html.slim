@@ -29,14 +29,14 @@
     .form_group.edit_fields
       = f.simple_fields_for :pictures do |i|
         = image_tag i.object.img.url(:medium_s)
-        = i.input :img, as: :file
+        = i.input :img, as: :file, required: true
         = i.link_to_remove "", class: 'btn_danger icon-trash-empty'
     .form_group
       = f.link_to_add "Добавить изображение", :pictures
   - else
     .form_group
       = f.simple_fields_for :pictures do |i|
-        = i.input :img, as: :file
+        = i.input :img, as: :file, required: true
       = f.link_to_add "Добавить изображение", :pictures
   .form_group.actions
     = f.submit 'Сохранить', class: 'btn_primary'

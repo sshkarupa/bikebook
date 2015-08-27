@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
-  belongs_to :bike
+
+  belongs_to :bike, inverse_of: :pictures
 
   has_attached_file :img,
                     :styles => { :medium_l => "600x450#", :medium => "235x235#", :medium_s => "200x200#", :thumb => "100x100#" },

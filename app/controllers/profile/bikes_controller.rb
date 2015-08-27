@@ -22,12 +22,21 @@ class Profile::BikesController < ApplicationController
     @bike = current_user.bikes.build(bike_params)
     bike_config
     bike_location @bike
+    unless @bike.pictures.present?
+      @bike.pictures.build
+    end
     if @bike.save
       redirect_to profile_bikes_path
       flash[:notice] = "Объявление создано"
     else
       render :new
     end
+  end
+
+  def edit
+    @bike = current_user.bikes.find(params[:id])
+    bike_config
+    bike_location @bike
   end
 
   def update
@@ -42,11 +51,6 @@ class Profile::BikesController < ApplicationController
     end
   end
 
-  def edit
-    @bike = current_user.bikes.find(params[:id])
-    bike_config
-    bike_location @bike
-  end
 
   def destroy
     @bike = current_user.bikes.find(params[:id])

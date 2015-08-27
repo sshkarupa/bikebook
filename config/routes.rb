@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   root 'pages#home'
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'phones/send_sms', to: 'phones#send_sms'
   get 'phones/show_user_phone/:id', to: 'phones#show_user_phone'
+
+  resources :feedback, only: [:create, :new]
 
   devise_for :users, controllers: { registrations: "registrations" }
 end
