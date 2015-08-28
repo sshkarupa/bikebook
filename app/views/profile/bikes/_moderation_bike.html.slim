@@ -5,14 +5,14 @@
         = link_to picture.img.url do
           = image_tag picture.img.url(:medium_l)
   .title
-    h3 = link_to bike.title, bike_path(bike), target: '_blank'
+    h3 = link_to truncate(bike.title, length: 70), bike_path(bike), target: '_blank'
   .config
     = render'shared/bike_config', bike: bike
   - if bike.description.present?
     .description
       .bike_group
         div Описание:
-        = bike.description
+        = truncate bike.description, length: 200
   .services
     span.approve_bike.btn_success Одобрить
     span.reject_bike.btn_danger Отклонить
