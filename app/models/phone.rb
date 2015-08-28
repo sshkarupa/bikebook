@@ -1,10 +1,12 @@
 class Phone < ActiveRecord::Base
   belongs_to :user
-  validates :number, presence: true, uniqueness: true
+  validates :number, presence: true
+  validates_uniqueness_of :number, conditions: -> { where activated: true }
 
   before_update :drop_activation
   before_create :phone_format
   before_validation :phone_format
+
 
   protected
   def phone_format
