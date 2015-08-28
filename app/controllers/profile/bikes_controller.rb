@@ -71,11 +71,15 @@ class Profile::BikesController < ApplicationController
     @bike = Bike.find(params[:id])
     authorize! :all, @bike
 
-    if @bike.update(status: params[:status])
+    if @bike.update(bike_moderation_params)
       render json: { message: {success: 'Статус успешно изменен'}}
     else
       render json: { message: {alert: 'Произошла ошибка'}}, status: 400
     end
+  end
+
+  def bike_moderation_params
+    params.permit(:status, :status_message)
   end
 
   def bike_params

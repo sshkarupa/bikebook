@@ -6,6 +6,7 @@
 #= require vendor/nprogress
 #= require vendor/jquery.formstyler
 #= require vendor/minigrid
+#= require vendor/jquery.ba-outside-events
 #= require shared/flash
 #= require shared/header
 #= require bikes/bike

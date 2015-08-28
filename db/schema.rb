@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827091818) do
+ActiveRecord::Schema.define(version: 20150828133533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150827091818) do
 
   create_table "bikes", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "status",      default: "on_moderation"
+    t.string   "status",         default: "on_moderation"
     t.string   "title"
     t.text     "description"
     t.integer  "bike_type"
@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 20150827091818) do
     t.integer  "suspension"
     t.integer  "sex"
     t.string   "price"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.integer  "city"
     t.integer  "department"
     t.integer  "age"
+    t.string   "status_message"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -93,6 +94,13 @@ ActiveRecord::Schema.define(version: 20150827091818) do
 
   create_table "sexes", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "status_messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

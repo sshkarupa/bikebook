@@ -3,7 +3,7 @@
   margin: 20px 0
   padding: 0 !important
   position: relative
-  +clearfix
+  +pie-clearfix
   .title
     padding: 10px 20px 11px 20px
     overflow: hidden
@@ -16,6 +16,7 @@
     background-position: center
     background-size: cover
     position: relative
+    overflow: hidden
   .image, .config, .description
     float: left
   .profile_bike_status
@@ -34,7 +35,19 @@
     &.on_moderation
       background-color: #FB6027
     &.rejected
-      background-color: red
+      background-color: #e25d5d
+      span
+        color: white
+        border-bottom: 1px dashed white
+      &:hover
+        .status_message
+          display: block
+
+  .status_message
+    background-color: #e25d5d
+    line-height: 1
+    padding: 10px
+    display: none
 
   .config
     padding: 0 20px
