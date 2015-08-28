@@ -11,13 +11,15 @@ init = ->
       preload: [0, 1]
 
   owl = $(".bike_slider")
-  slides = if owl.find('a').length <= 1 then false else true
-  owl.owlCarousel
-    items: 1
-    nav: slides
-    dots: slides
-    navText: ["",""]
-    loop: false
+  owl.each(->
+    slides = if $(this).find('a').length <= 1 then false else true
+    $(this).owlCarousel
+      items: 1
+      nav: slides
+      dots: slides
+      navText: ["",""]
+      loop: false
+  )
 
   $('.show_phone').on 'click', ->
     el = $(this)
