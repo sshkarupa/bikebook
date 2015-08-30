@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :bikes, dependent: :destroy
+  has_many :feedbacks, dependent: :destroy
   has_one :phone, dependent: :destroy
   accepts_nested_attributes_for :phone, :allow_destroy => true
   validates :email, :name, presence: true
@@ -17,6 +18,7 @@ class User < ActiveRecord::Base
   def set_role
     self.role = 'user'
   end
+
 
   rails_admin do
 

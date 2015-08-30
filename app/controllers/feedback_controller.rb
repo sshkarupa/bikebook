@@ -7,7 +7,7 @@ class FeedbackController < ApplicationController
   end
 
   def create
-    @feedback = Feedback.new(feedback_params)
+    @feedback = current_user.feedbacks.build(feedback_params)
     if @feedback.save
       flash[:success] = 'Сообщение отправлено'
       redirect_to root_path
